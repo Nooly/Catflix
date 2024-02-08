@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 
 // Import the dotenv module to load environment variables from a .env file into process.env
 import dotenv from "dotenv";
+import seedRouter from "./routes/seedRouter.js";
 
 // Create an instance of an Express application
 const app = express();
@@ -27,3 +28,20 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set the port for the server to listen on, either from the environment variable PORT or default to 8080
 const PORT = process.env.PORT || 8080;
+
+// Use the seedRouter for routes starting with "/api/v1/seed"
+app.use("/api/v1/seed", seedRouter);
+
+// Middleware for handling errors
+app.use((err, req, res, next) => {
+    res.status(500).send({message: err.message})
+})
+
+// Connect to the MongoDB database using the connection string from the environment variables
+mongoose.connect(process.env.MONGO_CONNECTION_STRING) //make sure that you have a .env file
+.then(() => {
+    // Start the server and listen on the specified port
+    app.listen(PORT, function(){
+        console.log("listening on " + PORT);
+    })
+}).catch(err => {console.log(err.message);}); // Log any errors during the connection
