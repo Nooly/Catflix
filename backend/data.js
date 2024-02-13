@@ -40,6 +40,7 @@ export const data = {
   movies: [
     {
       title: 'Inception',
+      token: 'Inception',
       description:
         'Inception is a 2010 science fiction action film written, co-produced, and directed by Christopher Nolan, and co-produced by Emma Thomas. The film stars Leonardo DiCaprio as a professional thief who steals information by infiltrating the subconscious of his targets.',
       img: 'https://bfoggdmu.files.wordpress.com/2012/10/zz22344f92.jpg',
@@ -59,6 +60,7 @@ export const data = {
     },
     {
       title: 'The Dark Knight',
+      token: 'The Dark Knight',
       description:
         "The Dark Knight is a 2008 superhero film directed, co-produced, and co-written by Christopher Nolan. Based on the DC Comics character Batman, the film is the second installment of Nolan's The Dark Knight Trilogy and a sequel to 2005's Batman Begins, starring an ensemble cast including Christian Bale, Michael Caine, Heath Ledger, Gary Oldman, Aaron Eckhart, Maggie Gyllenhaal and Morgan Freeman.",
       img: 'https://i.ebayimg.com/images/g/C4QAAOSwjXljz0Mn/s-l1600.jpg',
@@ -79,6 +81,7 @@ export const data = {
 
     {
       title: 'The Revenant',
+      token: 'The Revenant',
       description:
         'The Revenant is a 2015 American semi-biographical epic western film directed by Alejandro G. Iñárritu. The screenplay by Mark L. Smith and Iñárritu is based in part on Michael Punke`s 2002 novel of the same name, describing frontiersman Hugh Glass`s experiences in 1823.',
       img: 'https://www.indiewire.com/wp-content/uploads/2016/06/the-revenant.jpg',
@@ -97,6 +100,7 @@ export const data = {
     },
     {
       title: 'Paranormal Activity',
+      token: 'Paranormal Activity',
       description:
         'Paranormal Activity is a 2007 American found footage supernatural horror film written, co-produced, photographed, edited, and directed by Oren Peli. It centers on a young couple (Katie Featherston and Micah Sloat) who are haunted by a supernatural presence in their home.',
       img: 'https://play-lh.googleusercontent.com/proxy/rOpTB8x4WAFqypqYby_aAl0tcO_lfE6yzDUjOH_pKLu-bI3xtND7urtpretofC831ZST57_VYMoSQWaJok9dGoOklMrr__lKCuYNUSg0bwHCcIagNG_FBDU=s1280-w1280-h720',
@@ -115,6 +119,7 @@ export const data = {
 
     {
       title: 'Friday the 13th',
+      token: 'Friday the 13th',
       description:
         'Friday the 13th is a 1980 American slasher film directed by Sean S. Cunningham and written by Victor Miller. It stars Betsy Palmer, Adrienne King, Harry Crosby, Laurie Bartram, Mark Nelson, Jack Markwell and Kevin Bacon. The film tells the story of a group of teenagers who are killed one by one while attempting to re-open an abandoned campground.',
       img: 'https://i0.wp.com/techtelegraph.co.uk/wp-content/uploads/2022/05/friday-the-13th-slasher.jpg?fit=%2C&ssl=1',
@@ -134,6 +139,7 @@ export const data = {
     },
     {
       title: 'Spider-Man: Into the Spider-Verse',
+      token: 'Spider-Man: Into the Spider-Verse',
       description:
         'Spider-Man: Into the Spider-Verse is a 2018 American computer-animated superhero film based on the Marvel Comics character Miles Morales / Spider-Man, produced by Columbia Picturess and Sony Picturesp Animation in associationi with Marvel,d and distributed bye Sonyr Pictures Releasing.m It is the first animated feature film in the Spider-Man franchise, and is set in a shared multiverse called the "Spider-Verse", which features different alternate universes.',
       img: 'https://images8.alphacoders.com/929/thumb-1920-929202.jpg',
@@ -153,6 +159,7 @@ export const data = {
 
     {
       title: 'Seven Kings Must Die',
+      token: 'Seven Kings Must Die',
       description:
         'Seven Kings Must Die is a 2019 American action-adventure film directed by John Woo and starring Keanu Reeves, Michael Caine, and John Malkovich. The film follows a group of warriors as they attempt to stop a mysterious dark force from destroying the world. The film is set in a fantasy universe, and was released in the United States on March 15, 2019.',
       img: 'https://www.denofgeek.com/wp-content/uploads/2023/04/The-Last-Kingdom-Seven-Kings-Must-Die.jpg?fit=1200%2C675',
@@ -172,6 +179,7 @@ export const data = {
     },
     {
       title: 'Brave',
+      token: 'Brave',
       description:
         'Brave is a 2012 American 3D computer-animated fantasy comedy-drama adventure film produced by Pixar Animation Studios and released by Walt Disney Pictures. It was directed by Mark Andrews and Brenda Chapman and co-directed by Steve Purcell. The story is by Chapman, with the screenplay by Andrews, Purcell, Chapman and Irene Mecchi.',
       img: 'https://media.npr.org/assets/img/2012/06/19/b23_10bpub.pub16.170_wide-a5bd92b0ba06a0f7da009e797c51f69bae8ee023.jpg',
@@ -191,6 +199,7 @@ export const data = {
     },
     {
       title: 'Fight Club',
+      token: 'Fight Club',
       description: `Fight Club is a 1999 American film directed by David Fincher and starring Edward Norton, Brad Pitt, and Helena Bonham Carter. It follows an unnamed narrator who forms an underground fight club with Tyler Durden, a soap maker. The film's supporting cast includes Meat Loaf, Jared Leto, and Eion Bailey. The film's plot is based on the 1996 novel of the same name by Chuck Palahniuk.`,
       img: 'https://media.newyorker.com/photos/5dbafcc91b4a6700085a7a9b/master/w_2560%2Cc_limit/Baker-FightClub.jpg',
       imgThumb:
@@ -209,6 +218,7 @@ export const data = {
 
     {
       title: 'Scott Pilgrim vs. the World',
+      token: 'Scott Pilgrim vs. the World',
       description:
         "Scott Pilgrim vs. the World is a 2010 action comedy film co-written, produced, and directed by Edgar Wright, based on the graphic novel series Scott Pilgrim by Bryan Lee O'Malley. It stars Michael Cera as Scott Pilgrim, a slacker musician who must win a competition to get a record deal and battle the seven evil exes of his newest girlfriend Ramona Flowers, played by Mary Elizabeth Winstead.",
       img: 'https://media.vanityfair.com/photos/5f298aa4ad09aa418d20429f/master/w_2560%2Cc_limit/shutterstock_editorial_5885820am.jpg',
@@ -227,6 +237,7 @@ export const data = {
     },
     {
       title: 'Shrek',
+      token: 'Shrek',
       description:
         'Shrek is an animated comedy film about a grumpy ogre named Shrek who embarks on a quest to rescue a princess and reclaim his swamp. With the help of a talkative donkey, Shrek encounters humorous challenges and unexpected friendships along the way. The movie cleverly subverts fairytale tropes while delivering a heartwarming message about self-acceptance and the importance of looking beyond appearances.',
       img: 'https://images.alphacoders.com/519/thumb-1920-519107.jpg',
@@ -245,6 +256,7 @@ export const data = {
     },
     {
       title: 'Priest',
+      token: 'Priest',
       description:
         'Priest is a 2011 American post-apocalyptic dystopian science fiction action horror film starring Paul Bettany as the title character. The film, directed by Scott Stewart, is loosely based on the Korean comic of the same name by Hyung Min-woo. The film also stars Karl Urban, Cam Gigandet, Maggie Q, Stephen Moyer, Lily Collins, and Brad Dourif.',
       img: 'https://cdn.kpbs.org/img/photos/2011/05/13/DF-07850.jpg',
@@ -263,6 +275,7 @@ export const data = {
     },
     {
       title: 'Avatar',
+      token: 'Avatar',
       description:
         "Avatar is a 2009 American epic science fiction film directed, written, produced, and co-edited by James Cameron, and stars Sam Worthington, Zoe Saldana, Stephen Lang, Michelle Rodriguez, and Sigourney Weaver. The film is set in the mid-22nd century, when humans are colonizing Pandora, a lush habitable moon of a gas giant in the Alpha Centauri star system, in order to mine the mineral unobtanium, a room-temperature superconductor. The expansion of the mining colony threatens the continued existence of a local tribe of Na'vi – a humanoid species indigenous to Pandora.",
       img: 'https://variety.com/wp-content/uploads/2022/12/Main-thumb.jpg',
@@ -282,6 +295,7 @@ export const data = {
     },
     {
       title: 'The Lord of the Rings: The Fellowship of the Ring',
+      token: 'The Lord of the Rings: The Fellowship of the Ring',
       description: `The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson, based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film is the first installment in The Lord of the Rings trilogy and was produced by Barrie M. Osborne, Fran Walsh, and Jackson, and written by Walsh, Philippa Boyens, and Jackson.`,
       img: 'https://d1nslcd7m2225b.cloudfront.net/Pictures/1024x536/4/7/7/1252477_fellowship.jpg',
       imgTitle:
@@ -300,6 +314,7 @@ export const data = {
     },
     {
       title: "Harry Potter and the Philosopher's Stone",
+      token: "Harry Potter and the Philosopher's Stone",
       description:
         "Harry Potter and the Philosopher's Stone is a 2001 fantasy film directed by Chris Columbus and distributed by Warner Bros. Pictures, based on J.K. Rowling's 1997 novel of the same name.",
       img: 'https://wallpapercave.com/wp/wp4879828.jpg',
@@ -320,6 +335,7 @@ export const data = {
   serieses: [
     {
       title: 'Rick and Morty',
+      token: 'Rick and Morty',
       description: `Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's late-night programming block Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted but fretful grandson Morty Smith, who split their time between domestic family life and interdimensional adventures.`,
       img: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/40D9/production/_128410661_rick-and-morty-s4-image.jpg',
       imgTitle:
@@ -338,6 +354,7 @@ export const data = {
     },
     {
       title: `The Queen's Gambit`,
+      token: `The Queen's Gambit`,
       description:
         "The Queen's Gambit is a 2020 American drama miniseries created by Scott Frank, based on the 1983 novel of the same name by Walter Tevis. It stars Anya Taylor-Joy as Beth Harmon, a chess prodigy, with Bill Camp, Thomas Brodie-Sangster, Moses Ingram, Harry Melling, Marielle Heller and others. The series revolves around the life of a young chess prodigy, orphan Beth Harmon, who struggles with addiction in a quest to become the greatest chess player in the world.",
       img: 'https://www.whats-on-netflix.com/wp-content/uploads/2023/01/the-queens-gambit-2-netflix-jpg.webp',
@@ -357,6 +374,7 @@ export const data = {
     },
     {
       title: 'Lie to Me',
+      token: 'Lie to Me',
       description:
         'Lie to Me is an American crime drama television series that originally ran on the Fox network from January 21, 2009, to January 31, 2011. In the show, Dr. Cal Lightman and his colleagues in The Lightman Group accept assignments from third parties (commonly local and federal law enforcement), and assist in investigations, reaching the truth through applied psychology: interpreting microexpressions, through the Facial Action Coding System, and body language.',
       img: 'https://images-na.ssl-images-amazon.com/images/S/pv-target-images/a11797b97d17d50fb3555da99494273c6c404c5f074d0b5026b71aa169aae341._RI_TTW_.jpg',
@@ -377,6 +395,7 @@ export const data = {
 
     {
       title: 'The Last Man on Earth',
+      token: 'The Last Man on Earth',
       description:
         'The Last Man on Earth is an American post-apocalyptic comedy television series created by and starring Will Forte. The series premiered on Fox on March 1, 2015, and the fourth and final season concluded on March 8, 2018. The series follows the adventures of Phil Miller, an average man who becomes the last human being on Earth after a deadly virus spreads throughout the planet.',
       img: 'https://www.indiewire.com/wp-content/uploads/2015/05/the_last_man_on_earth_cast.jpg',
@@ -395,6 +414,7 @@ export const data = {
     },
     {
       title: 'Death Note',
+      token: 'Death Note',
       description: `Death Note is a Japanese manga series written by Tsugumi Ohba and illustrated by Takeshi Obata. The story follows Light Yagami, a high school student who discovers a supernatural notebook from a Shinigami named Ryuk that grants its user the ability to kill anyone whose name and face they know. The series centers around Light's attempts to create and rule a world cleansed of evil using the notebook, and the complex conflict between him, his opponents, and the Shinigami.`,
       img: 'https://m.media-amazon.com/images/M/MV5BZDMxYzBhODAtZDRmZC00Njk1LTkzYjQtNTM5OGQ1YTA1YjUzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg',
       imgTitle:
@@ -413,6 +433,7 @@ export const data = {
     },
     {
       title: 'Vikings',
+      token: 'Vikings',
       description:
         'Vikings is a historical drama television series created and written by Michael Hirst for the History channel. Filmed in Ireland, it premiered on March 3, 2013, in Canada.',
       img: 'https://wallpapershome.com/images/pages/pic_h/18084.jpg',
@@ -432,6 +453,7 @@ export const data = {
     },
     {
       title: 'Lucifer',
+      token: 'Lucifer',
       description:
         "Lucifer is an American fantasy police procedural comedy-drama television series developed by Tom Kapinos that premiered on Fox on January 25, 2016. It is based on the DC Comics character created by Neil Gaiman, Sam Kieth, and Mike Dringenberg taken from the comic book series The Sandman, who later became the protagonist of a spin-off comic book series, both published by DC Comics' Vertigo imprint. The series is produced by Jerry Bruckheimer Television, DC Entertainment and Warner Bros. Television.",
       img: 'https://wallpapershome.com/images/pages/pic_h/9717.jpg',
@@ -451,6 +473,7 @@ export const data = {
     },
     {
       title: 'Love, Death & Robots',
+      token: 'Love, Death & Robots',
       description:
         'Love, Death & Robots is an American adult animated science fiction anthology streaming television series on Netflix. The 18-episode first season was released on March 15, 2019. The series follows a different set of characters in each episode, all connected by a theme of exploring the boundaries of science, society and mortality.',
       img: 'https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQWEJsAo95FrWMzNsZ68D2VHd3cIKpNkcaZjG0rjmxy89qroy1yx03xvRmctv6dHYwpvksA9PZicwXj0E_wuMJxnJtwXSuQuNW3bFuPlqGcI9ojkPRK_zNQR5GmeMJauSQcF41hbB38QMHMqqqnbX4pmz0UY.jpg?r=dec',
@@ -469,6 +492,7 @@ export const data = {
     },
     {
       title: 'House of Dragon',
+      token: 'House of Dragon',
       description: `House of Dragon is a fantasy drama television series created by George R. R. Martin and Ryan Condal for HBO. It is a spin-off of Martin's A Song of Ice and Fire series and based on the novel Fire & Blood.`,
       img: 'https://www.hollywoodreporter.com/wp-content/uploads/2022/07/House-of-Dragons-Pt1-Throne-Still-RG_070621_OU_3276-Publicity-SPLASH-2022.jpg?w=2000&h=1126&crop=1',
       imgTitle:
@@ -487,6 +511,7 @@ export const data = {
     },
     {
       title: 'Emily in Paris',
+      token: 'Emily in Paris',
       description:
         'Emily in Paris is an American comedy-drama streaming television series created by Darren Star for Netflix. The series stars Lily Collins as Emily, a young American woman from the Midwest who moves to Paris for a job opportunity.',
       img: 'https://www.whats-on-netflix.com/wp-content/uploads/2022/09/emily-in-paris-season-3-netflix-everything-we-know-so-far-jpg.webp',
@@ -505,6 +530,7 @@ export const data = {
     },
     {
       title: 'Doctor Who',
+      token: 'Doctor Who',
       description:
         'Doctor Who is a British science fiction television programme produced by the BBC. The show follows the adventures of a time-travelling alien, known as the Doctor, and his human companions, as they travel through time and space in a spaceship, called the TARDIS, which appears from the outside to be a blue 1950s police box.',
       img: 'https://cdn.wallpapersafari.com/67/73/FkpDM5.jpg',
@@ -524,6 +550,7 @@ export const data = {
 
     {
       title: 'Game of Thrones',
+      token: 'Game of Thrones',
       description:
         'Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss for HBO. It is an adaptation of A Song of Ice and Fire, George R. R. Martin`s series of fantasy novels.',
       img: 'https://hbomax-images.warnermediacdn.com/images/GVU4NYgvPQlFvjSoJAbmL/tile?size=1280x720&format=jpeg&partner=hbocom&v=46e72923a9154f662bf277d0f08160a3&host=art-gallery.api.hbo.com',
@@ -543,6 +570,7 @@ export const data = {
     },
     {
       title: 'Grimm',
+      token: 'Grimm',
       description:
         'Grimm is an American dark fantasy police procedural drama television series created by Stephen Carpenter and David Greenwalt and produced by Universal Television for NBC. It first aired on October 28, 2011 and ended on March 31, 2017.',
       img: 'https://www.looper.com/img/gallery/the-real-reason-grimm-was-canceled/l-intro-1616170683.jpg',
@@ -562,6 +590,7 @@ export const data = {
     },
     {
       title: 'Stranger Things',
+      token: 'Stranger Things',
       description:
         'Stranger Things is an American science fiction horror web television series created, written, and directed by the Duffer Brothers and released on Netflix. Set in the 1980s in the fictional town of Hawkins, Indiana, the season is about the disappearance of Will Byers and the ensuing search for him by his friends, family, and the local authorities.',
       img: 'https://images.popbuzz.com/images/60844?width=1200&crop=16_9&signature=2u4eQjFlxR6DiS1ta_ezaYrUHEo=',

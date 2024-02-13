@@ -1,9 +1,10 @@
 import express from 'express';
 import expressAsyncHandler from "express-async-handler";
-import { getMovies, getMoviesByGenre } from '../controllers/movieController.js';
+import { getMovieByToken, getMovies, getMoviesByGenre } from '../controllers/movieController.js';
 
 const moviesRouter = express.Router();
 moviesRouter.get('/', expressAsyncHandler(getMovies));
 moviesRouter.get('/genre/:genre', expressAsyncHandler(getMoviesByGenre));
+moviesRouter.get('/token/:token', expressAsyncHandler(getMovieByToken));
 
 export default moviesRouter;

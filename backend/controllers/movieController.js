@@ -15,6 +15,11 @@ const getMoviesByGenre = async (req, res) => {
     }
 };
 
+const getMovieByToken = async (req, res) => {
+    const movie = await Movie.findOne({token: req.params.token});
+    if (movie) res.send(movie)
+    else res.status(404).send({ message: "Movie not found" });
+}
 
 
-export { getMovies, getMoviesByGenre };
+export { getMovies, getMoviesByGenre, getMovieByToken };

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const movieSchema = new mongoose.Schema({
     title: { type: String, required: true },
+    token: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     img: { type: String, required: true },
     imgTitle: { type: String, required: true },
