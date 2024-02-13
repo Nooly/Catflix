@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seedRouter.js";
 import usersRouter from "./routes/userRouter.js";
+import moviesRouter from "./routes/movieRouter.js";
+import seriesesRouter from "./routes/seriesRouter.js";
 
 // Create an instance of an Express application
 const app = express();
@@ -24,17 +26,19 @@ const PORT = process.env.PORT || 8080;
 
 app.use("/api/v1/seed", seedRouter);
 app.use("/api/v1/users", usersRouter)
+app.use("/api/v1/movies", moviesRouter)
+app.use("/api/v1/serieses", seriesesRouter)
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {
-    res.status(500).send({message: err.message})
+    res.status(500).send({ message: err.message })
 })
 
 // Connect to the MongoDB database using the connection string from the environment variables
 mongoose.connect(process.env.MONGO_CONNECTION_STRING) //make sure that you have a .env file
-.then(() => {
-    // Start the server and listen on the specified port
-    app.listen(PORT, function(){
-        console.log("listening on " + PORT);
-    })
-}).catch(err => {console.log(err.message);}); // Log any errors during the connection
+    .then(() => {
+        // Start the server and listen on the specified port
+        app.listen(PORT, function () {
+            console.log("listening on " + PORT);
+        })
+    }).catch(err => { console.log(err.message); }); // Log any errors during the connection

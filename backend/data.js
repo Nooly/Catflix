@@ -37,9 +37,8 @@ export const data = {
       myList: [],
     },
   ],
-  content: [
+  movies: [
     {
-      //Movies
       title: 'Inception',
       description:
         'Inception is a 2010 science fiction action film written, co-produced, and directed by Christopher Nolan, and co-produced by Emma Thomas. The film stars Leonardo DiCaprio as a professional thief who steals information by infiltrating the subconscious of his targets.',
@@ -56,7 +55,7 @@ export const data = {
       year: '2010',
       limit: '15',
       genre: 'Action',
-      isSeries: false,
+
     },
     {
       title: 'The Dark Knight',
@@ -75,7 +74,7 @@ export const data = {
       year: '2008',
       limit: '15',
       genre: 'Action',
-      isSeries: false,
+
     },
 
     {
@@ -94,7 +93,7 @@ export const data = {
       year: '2015',
       limit: '15',
       genre: 'Action',
-      isSeries: false,
+
     },
     {
       title: 'Paranormal Activity',
@@ -111,7 +110,7 @@ export const data = {
       year: '2007',
       limit: '18',
       genre: 'Horror',
-      isSeries: false,
+
     },
 
     {
@@ -131,7 +130,7 @@ export const data = {
       year: '1980',
       limit: '18',
       genre: 'Horror',
-      isSeries: false,
+
     },
     {
       title: 'Spider-Man: Into the Spider-Verse',
@@ -149,7 +148,7 @@ export const data = {
       year: '2018',
       limit: '13',
       genre: 'Animation',
-      isSeries: false,
+
     },
 
     {
@@ -169,7 +168,7 @@ export const data = {
       year: '2019',
       limit: '15',
       genre: 'Action',
-      isSeries: false,
+
     },
     {
       title: 'Brave',
@@ -188,7 +187,7 @@ export const data = {
       year: '2012',
       limit: '8',
       genre: 'Animation',
-      isSeries: false,
+
     },
     {
       title: 'Fight Club',
@@ -205,7 +204,7 @@ export const data = {
       year: '1999',
       limit: '18',
       genre: 'Detective',
-      isSeries: false,
+
     },
 
     {
@@ -224,7 +223,7 @@ export const data = {
       year: '2010',
       limit: '13',
       genre: 'Comedy',
-      isSeries: false,
+
     },
     {
       title: 'Shrek',
@@ -242,7 +241,7 @@ export const data = {
       year: '2001',
       limit: '13',
       genre: 'Animation',
-      isSeries: false,
+
     },
     {
       title: 'Priest',
@@ -260,7 +259,7 @@ export const data = {
       year: '2011',
       limit: '18',
       genre: 'Horror',
-      isSeries: false,
+
     },
     {
       title: 'Avatar',
@@ -279,7 +278,7 @@ export const data = {
       year: '2009',
       limit: '12',
       genre: 'Fantasy',
-      isSeries: false,
+
     },
     {
       title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -297,7 +296,7 @@ export const data = {
       year: '2001',
       limit: '13',
       genre: 'Fantasy',
-      isSeries: false,
+
     },
     {
       title: "Harry Potter and the Philosopher's Stone",
@@ -314,10 +313,11 @@ export const data = {
       year: '2001',
       limit: 'PG',
       genre: 'Fantasy',
-      isSeries: false,
+
     },
 
-    //Series
+  ],
+  serieses: [
     {
       title: 'Rick and Morty',
       description: `Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's late-night programming block Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted but fretful grandson Morty Smith, who split their time between domestic family life and interdimensional adventures.`,
@@ -329,12 +329,12 @@ export const data = {
       imgVertical:
         'https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg',
       trailer: 'https://youtu.be/jerFRSQW9g8',
-      movie: 'https://youtu.be/jerFRSQW9g8',
+      episodes: ['https://youtu.be/jerFRSQW9g8',],
       duration: '22 min',
       year: '2013',
       limit: '15',
       genre: 'Animation',
-      isSeries: true,
+
     },
     {
       title: `The Queen's Gambit`,
@@ -348,12 +348,12 @@ export const data = {
       imgVertical:
         'https://1.bp.blogspot.com/-DB4YRE95A9I/YZnN1oTXSDI/AAAAAAAAGW4/Zd2TqAPG51oGmEBgqkrZBqa---Fb0YGuQCNcBGAsYHQ/s1536/Gambito-de-Dama.jpg',
       trailer: 'https://youtu.be/oZn3qSgmLqI',
-      movie: 'https://youtu.be/oZn3qSgmLqI',
+      episodes: ['https://youtu.be/oZn3qSgmLqI',],
       duration: '50 min',
       year: '2020',
       limit: '18',
       genre: 'Action',
-      isSeries: true,
+
     },
     {
       title: 'Lie to Me',
@@ -367,12 +367,12 @@ export const data = {
       imgVertical:
         'https://m.media-amazon.com/images/I/81rE-kEY-ZL._AC_UF1000,1000_QL80_.jpg',
       trailer: 'https://youtu.be/Kq6PiXEG9Eg',
-      movie: 'https://youtu.be/Kq6PiXEG9Eg',
+      episodes: ['https://youtu.be/Kq6PiXEG9Eg',],
       duration: '42 min',
       year: '2009-2011',
       limit: '16',
       genre: 'Crime Drama',
-      isSeries: true,
+
     },
 
     {
@@ -386,12 +386,12 @@ export const data = {
         'https://ntvb.tmsimg.com/assets/p10775022_b_h10_aa.jpg?w=1280&h=720',
       imgVertical: 'https://flxt.tmsimg.com/assets/p10775022_b_v8_aa.jpg',
       trailer: 'https://youtu.be/NUZu331xTFs',
-      movie: 'https://youtu.be/NUZu331xTFs',
+      episodes: ['https://youtu.be/NUZu331xTFs',],
       duration: '30 min',
       year: '2015 - 2018',
       limit: '16',
       genre: 'Comedy',
-      isSeries: true,
+
     },
     {
       title: 'Death Note',
@@ -404,12 +404,12 @@ export const data = {
       imgVertical:
         'https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg',
       trailer: 'https://youtu.be/NlJZ-YgAt-c',
-      movie: 'https://youtu.be/NlJZ-YgAt-c',
+      episodes: ['https://youtu.be/NlJZ-YgAt-c',],
       duration: '2 hours 37 min',
       year: '2006',
       limit: '16',
       genre: 'Animation',
-      isSeries: true,
+
     },
     {
       title: 'Vikings',
@@ -423,12 +423,12 @@ export const data = {
       imgVertical:
         'https://image.tmdb.org/t/p/original/w1SiyVcFQIB1YbeKfT7KBnVMItO.jpg',
       trailer: 'https://youtu.be/9GgxinPwAGc',
-      movie: 'https://youtu.be/9GgxinPwAGc',
+      episodes: ['https://youtu.be/9GgxinPwAGc',],
       duration: '45 min',
       year: '2013',
       limit: '18',
       genre: 'Detective',
-      isSeries: true,
+
     },
     {
       title: 'Lucifer',
@@ -442,12 +442,12 @@ export const data = {
       imgVertical:
         'https://image.tmdb.org/t/p/original/e6FQvm5jycG9xx1ZWowIYBc3Shn.jpg',
       trailer: 'https://youtu.be/X4bF_quwNtw',
-      movie: 'https://youtu.be/X4bF_quwNtw',
+      episodes: ['https://youtu.be/X4bF_quwNtw',],
       duration: '45 min',
       year: '2016',
       limit: '15',
       genre: 'Comedy',
-      isSeries: true,
+
     },
     {
       title: 'Love, Death & Robots',
@@ -460,12 +460,12 @@ export const data = {
       imgVertical:
         'https://thefincheranalyst.files.wordpress.com/2022/05/love-death-robots-s3-main-noborder-vertical-27x40-rgb-pre-w5.1.webp',
       trailer: 'https://youtu.be/wUFwunMKa4E',
-      movie: 'https://youtu.be/wUFwunMKa4E',
+      episodes: ['https://youtu.be/wUFwunMKa4E',],
       duration: '40 min',
       year: '2019',
       limit: '18',
       genre: 'Animation',
-      isSeries: true,
+
     },
     {
       title: 'House of Dragon',
@@ -478,12 +478,12 @@ export const data = {
       imgVertical:
         'https://img.posterstore.com/zoom/wb0035-8houseofthedragon-rhaenyratargaryen50x70.jpg',
       trailer: 'https://youtu.be/DotnJ7tTA34',
-      movie: 'https://youtu.be/DotnJ7tTA34',
+      episodes: ['https://youtu.be/DotnJ7tTA34',],
       duration: '1 hour',
       year: '2022',
       limit: '16',
       genre: 'Fantasy',
-      isSeries: true,
+
     },
     {
       title: 'Emily in Paris',
@@ -496,12 +496,12 @@ export const data = {
       imgThumb:
         'https://media.newyorker.com/photos/5fab116f3f5e6c06f138f155/16:9/w_3600,h_2025,c_limit/Chayka-ambient-tv-1.jpg',
       trailer: 'https://youtu.be/Xl3HY9yMEBI',
-      movie: 'https://youtu.be/Xl3HY9yMEBI',
+      episodes: ['https://youtu.be/Xl3HY9yMEBI',],
       duration: '30 min',
       year: '2020',
       limit: '14',
       genre: 'Comedy',
-      isSeries: true,
+
     },
     {
       title: 'Doctor Who',
@@ -514,12 +514,12 @@ export const data = {
       imgVertical:
         'https://image.tmdb.org/t/p/original/jQmM0kRXf5yHD8y5exkLQttkHtX.jpg',
       trailer: 'https://youtu.be/fJtoxieq40o',
-      movie: 'https://youtu.be/fJtoxieq40o',
+      episodes: ['https://youtu.be/fJtoxieq40o',],
       duration: '45 min',
       year: '2005',
       limit: '13',
       genre: 'Action',
-      isSeries: true,
+
     },
 
     {
@@ -534,12 +534,12 @@ export const data = {
       imgVertical:
         'https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_2731,w_1889/https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2019%2F04%2FGOT-Aftermath.jpeg',
       trailer: 'https://youtu.be/bjqEWgDVPe0',
-      movie: 'https://youtu.be/bjqEWgDVPe0',
+      episodes: ['https://youtu.be/bjqEWgDVPe0',],
       duration: '1 hour',
       year: '2011',
       limit: '18',
       genre: 'Fantasy',
-      isSeries: true,
+
     },
     {
       title: 'Grimm',
@@ -553,12 +553,12 @@ export const data = {
       imgVertical:
         'https://m.media-amazon.com/images/M/MV5BMTkyODg2MzQwMV5BMl5BanBnXkFtZTgwNTA2MjE1MDI@._V1_FMjpg_UX1000_.jpg',
       trailer: 'https://youtu.be/2-4xKNZ_gaA',
-      movie: 'https://youtu.be/2-4xKNZ_gaA',
+      episodes: ['https://youtu.be/2-4xKNZ_gaA',],
       duration: '45 min',
       year: '2007',
       limit: '13',
       genre: 'Detective',
-      isSeries: true,
+
     },
     {
       title: 'Stranger Things',
@@ -572,12 +572,13 @@ export const data = {
       imgVertical:
         'https://resizing.flixster.com/0xxuABVVuzJrUT130WFHKE-irEg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzUyMTFhOTktZTU4Ni00ODkyLWJlYjQtZTgxYTllZmU2OGM0LmpwZw==',
       trailer: 'https://youtu.be/b9EkMc79ZSU',
-      movie: 'https://youtu.be/b9EkMc79ZSU',
+      episodes: ['https://youtu.be/b9EkMc79ZSU',],
       duration: '1 hour',
       year: '2016',
       limit: '16',
       genre: 'Horror',
-      isSeries: true,
+
     },
   ],
+
 };
