@@ -11,7 +11,7 @@ const getSeriesesByGenre = async (req, res) => {
     if (seriesesByGenre.length > 0) {
         res.send(seriesesByGenre);
     } else {
-        res.status(404).send({ message: "No movies found for this genre" });
+        res.status(404).send({ message: "No serieses found for this genre" });
     }
 };
 
