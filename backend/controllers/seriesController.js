@@ -5,4 +5,4 @@ const getSerieses = async (req,res) => {
     res.send({serieses});
 }
 
-export default getSerieses;
+export {getSerieses};
