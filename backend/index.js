@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seedRouter.js";
+import usersRouter from "./routes/userRouter.js";
 
 // Create an instance of an Express application
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 8080;
 
 app.use("/api/v1/seed", seedRouter);
+app.use("/api/v1/users", usersRouter)
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {

@@ -29,7 +29,7 @@ export const data = {
   lists: [],
   users: [
     {
-      username: 'Admin',
+      // username: 'Admin',
       email: 'admin@example.com',
       password: bcrypt.hashSync('12345'),
       //isAdmin: true,
