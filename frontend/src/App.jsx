@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"; // this to make the toast look good
 import './App.css';
 import { BrowserRouter, Container, Route, Routes } from './imports.js'
 import HomePage from './Pages/HomePage.jsx';
@@ -8,7 +10,8 @@ import SignUp from './Pages/SignUp.jsx';
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <ToastContainer position='bottom-center' limit={3}/>
+
         <Container>
           <Routes>
             <Route>
@@ -18,7 +21,7 @@ function App() {
             </Route>
           </Routes>
         </Container>
-      </div>
+
     </BrowserRouter>
   )
 }
