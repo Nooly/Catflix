@@ -3,20 +3,8 @@ import bcrypt from "bcryptjs"
 import { generateToken } from "../utils.js";
 import jwt from "jsonwebtoken";
 
-
-// const checkAuth = async (req, res) => {
-//     // Check authentication status using isAuth middleware
-//     const check = await isAuth(req, res);
-//     if (check) {
-//         res.status(200).send({ authenticated: true });
-//     } else {
-//         res.status(401).send({ authenticated: false });
-//     }
-// };
-
 const checkAuth = async (req, res) => {
     const auth = req.headers.authorization
-    // console.log(auth)
 
     if (auth) {
         const token = req.headers.authorization.split(" ")[1];
@@ -26,14 +14,11 @@ const checkAuth = async (req, res) => {
                 else {
                     req.user = decode;
                     res.status(200).send({ authenticated: true });
-
                 }
             });
         } catch (error) {
             console.log(error.message)
         }
-
-
     } else {
         res.status(401).send({ message: "Not authorized, no token" });
     }

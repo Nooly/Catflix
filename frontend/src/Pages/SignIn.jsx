@@ -11,7 +11,6 @@ const SignIn = () => {
 
   const { state, dispatch: ctxDispatch } = useContext(User);
   const { userInfo } = state;
-  // Use checkAuthentication function to make authenticated request
 
   useEffect(() => {
     if (userInfo) {
@@ -45,10 +44,6 @@ const SignIn = () => {
     } catch (error) {
       toast.error((error.message));
     }
-
-    // For demonstration purposes, let's log the entered values
-    console.log('Email:', email);
-    console.log('Password:', password);
   };
 
   const autoFill = (e) => {
@@ -78,8 +73,8 @@ const SignIn = () => {
 
 
   return (
-    <div className='signin-div'>
-      <h3 className='signin-label'>Sign In</h3>
+    <div className='sign-div'>
+      <h3 className='sign-label'>Sign In</h3>
       <form onSubmit={submitHandler} className='form-container'>
         {/* <label htmlFor="email" className='test'>Email</label> */}
         <input className='test'
@@ -97,7 +92,7 @@ const SignIn = () => {
           placeholder="Password"
           required
         />
-        <button type="submit" className='signin-button test'>Sign In</button>
+        <button type="submit" className='sign-button test'>Sign In</button>
       </form>
       <button onClick={autoFill} className='test'>Auto Fill</button>
     </div>
