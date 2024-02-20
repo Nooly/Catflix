@@ -5,21 +5,24 @@ const generateToken = ({ _id/*,name*/, email }) => {
 };
 
 
-const isAuth = async (req, res, next) => {
-    const auth = req.headers.authorization
-    if (auth) {
-        const token = req.headers.authorization.split(" ")[1];
-        jwt.verify(token, process.env.JWT_PW, (err, decode) => {
-            if (err) res.status(401).send({ message: "Welcome to the jungle" })
-            else {
-                req.user = decode;
-                next()
-            }
-        });
+// const isAuth = async (req, res, next) => {
+//     const auth = req.headers.authorization
+//     // console.log(auth)
+//     if (auth) {
+//         const token = req.headers.authorization.split(" ")[1];
+//         jwt.verify(token, process.env.JWT_PW, (err, decode) => {
+//             console.log(token)
+//             if (err) res.status(401).send({ message: "Welcome to the jungle" })
+//             else {
+//                 req.user = decode;
+//                 console.log(user);
+//                 // next()
+//             }
+//         });
 
-    } else {
-        res.status(401).send({ message: "Not authorized, no token" });
-    }
-};
+//     } else {
+//         res.status(401).send({ message: "Not authorized, no token" });
+//     }
+// };
 
-export { generateToken, isAuth }
+export { generateToken }

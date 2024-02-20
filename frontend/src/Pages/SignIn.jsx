@@ -1,4 +1,7 @@
-import { React, axios, toast, useNavigate, useState } from '../imports.js';
+import { User } from '../User.jsx';
+import { USER_SIGNIN } from '../actions.jsx';
+import { React, axios, toast, useContext, useEffect, useNavigate, useState } from '../imports.js';
+import { checkAuthentication } from '../utils.js';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -6,14 +9,35 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
+  const { state, dispatch: ctxDispatch } = useContext(User);
+  const { userInfo } = state;
+  // Use checkAuthentication function to make authenticated request
+
+  useEffect(() => {
+    if (userInfo) {
+      checkAuthentication(userInfo);
+    }
+  }, []);
+
   const submitHandler = async (e) => {
     e.preventDefault(); // Prevents the default form submission behavior
 
+    // Validation checks
+    if (!validateEmail(email)) {
+      toast.error("Invalid email address, example@example.example");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      toast.error("Password must be between 3 and 12 characters and contain only letters and numbers");
+      return;
+    }
+
     try {
-      const { data } = await axios.post("/api/v1/users/signin", {email: email, password: password});
-      console.log(data);
-      console.log("success");
-      navigate("/");
+      const { data } = await axios.post("/api/v1/users/signin", { email: email, password: password });
+      ctxDispatch({ type: USER_SIGNIN, payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      // navigate("/");
     } catch (error) {
       toast.error((error.message));
     }
@@ -23,7 +47,7 @@ const SignIn = () => {
     console.log('Password:', password);
   };
 
-  const autoFill = (e) =>{
+  const autoFill = (e) => {
     let autoEmail = "dev@dev.com";
     let autoPassword = "dev";
     document.getElementById('email').value = autoEmail;
@@ -31,6 +55,23 @@ const SignIn = () => {
     setEmail(autoEmail);
     setPassword(autoPassword);
   }
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    // Check if password is between 4 and 12 characters
+    if (password.length < 3 || password.length > 12) {
+      return false;
+    }
+
+    // Check if password contains only letters and numbers
+    const passwordRegex = /^[a-zA-Z0-9]+$/;
+    return passwordRegex.test(password);
+  };
+
 
   return (
     <div className='signin-div'>

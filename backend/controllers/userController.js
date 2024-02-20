@@ -1,6 +1,43 @@
 import User from '../models/User.js';
 import bcrypt from "bcryptjs"
 import { generateToken } from "../utils.js";
+import jwt from "jsonwebtoken";
+
+
+// const checkAuth = async (req, res) => {
+//     // Check authentication status using isAuth middleware
+//     const check = await isAuth(req, res);
+//     if (check) {
+//         res.status(200).send({ authenticated: true });
+//     } else {
+//         res.status(401).send({ authenticated: false });
+//     }
+// };
+
+const checkAuth = async (req, res) => {
+    const auth = req.headers.authorization
+    // console.log(auth)
+
+    if (auth) {
+        const token = req.headers.authorization.split(" ")[1];
+        try {
+            jwt.verify(token, process.env.JWT_PW, (err, decode) => {
+                if (err) res.status(401).send({ authenticated: false })
+                else {
+                    req.user = decode;
+                    res.status(200).send({ authenticated: true });
+
+                }
+            });
+        } catch (error) {
+            console.log(error.message)
+        }
+
+
+    } else {
+        res.status(401).send({ message: "Not authorized, no token" });
+    }
+};
 
 const signup = async (req, res) => {
     const { email, password } = req.body;
@@ -24,11 +61,11 @@ const signup = async (req, res) => {
 }
 
 const signin = async (req, res) => {
-    const {password: passwordFromWebsite,email} = req.body;
+    const { password: passwordFromWebsite, email } = req.body;
 
-    const user = await User.findOne({email: email});
-    if(user){
-        if(bcrypt.compareSync(passwordFromWebsite,user.password)){
+    const user = await User.findOne({ email: email });
+    if (user) {
+        if (bcrypt.compareSync(passwordFromWebsite, user.password)) {
             res.send({
                 _id: user._id,
                 // name: user.name,
@@ -38,7 +75,7 @@ const signin = async (req, res) => {
             return;
         }
     }
-    res.status(401).send({message: "Invalid User/Password"});
+    res.status(401).send({ message: "Invalid User/Password" });
 }
 
-export { signup, signin };
+export { checkAuth, signup, signin };
