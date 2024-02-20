@@ -15,7 +15,11 @@ const SignIn = () => {
 
   useEffect(() => {
     if (userInfo) {
-      checkAuthentication(userInfo);
+      const checkAuth = async () => {
+        let isAuth = await checkAuthentication(userInfo);
+        if (isAuth) navigate("/");
+      }
+      checkAuth();
     }
   }, []);
 

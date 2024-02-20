@@ -8,10 +8,9 @@ const checkAuthentication = async (userInfo) => {
         const headers = { Authorization: `Bearer ${userInfo.token}` };
         const response = await axios.get(CHECK_AUTH_URL, { headers });
         const { authenticated } = response.data;
-        // console.log(authenticated);
-        // If were here it means authentication worked
+        return authenticated;
     } catch (error) {
-        toast.error("Authentication failed");
+        toast.error("User is not authenticated");
     }
 };
 
