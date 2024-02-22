@@ -10,7 +10,7 @@ import SignUp from './Pages/SignUp.jsx';
 function App() {
   return (
     <BrowserRouter>
-      <ToastContainer position='bottom-center' limit={3}/>
+      <ToastContainer position='bottom-center' limit={1}/>
 
         <Container>
           <Routes>

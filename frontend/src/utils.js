@@ -6,7 +6,7 @@ const CHECK_AUTH_URL = '/api/v1/users/check-auth'; // Adjust the URL to your ser
 const checkAuthentication = async (userInfo) => {
     try {
         const headers = { Authorization: `Bearer ${userInfo.token}` };
-        const response = await axios.get(CHECK_AUTH_URL, { headers });
+        const response = await axios.get(CHECK_AUTH_URL, { headers }); // check if this is needed if we have backend Auth, does 2 calls to backend
         const { authenticated } = response.data;
         return authenticated;
     } catch (error) {
