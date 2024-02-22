@@ -9,87 +9,95 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure it appears above other elements */
+    z-index: 1000;
+    /* Ensure it appears above other elements */
     color: white;
-  }
-  
-  .background-layer {
+}
+
+.background-layer {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #333; /* Set your background color here */
+    background-color: #333;
+    /* Set your background color here */
     z-index: -1;
-  }
-  
-  .left-section,
-  .right-section {
+}
+
+.left-section,
+.right-section {
     display: flex;
     align-items: center;
-  }
-  
-  .logo-container,
-  .nav-links,
-  .icons,
-  .search-bar {
-    padding: 5px; /* Add padding for all items inside the navbar */
-  }
-  
-  .logo-container {
+}
+
+.logo-container,
+.nav-links,
+.icons,
+.search-bar {
+    padding: 5px;
+    /* Add padding for all items inside the navbar */
+}
+
+.logo-container {
     cursor: pointer;
     margin-right: 20px;
-  }
-  
-  .logo {
+}
+
+.logo {
     padding-left: 30px;
     padding-top: 10px;
-    width: 100px; /* Adjust the size as needed */
-    height: 40px; /* Adjust the size as needed */
-  }
-  
-  .nav-links {
+    width: 100px;
+    /* Adjust the size as needed */
+    height: 40px;
+    /* Adjust the size as needed */
+}
+
+.nav-links {
     display: flex;
-  }
-  
-  .nav-links span {
+}
+
+.nav-links span {
     margin-right: 15px;
     cursor: pointer;
-  }
-  
-  .right-section {
+}
+
+.right-section {
     display: flex;
     align-items: center;
-  }
-  
-  .icons {
+}
+
+.icons {
     display: flex;
     align-items: center;
-  }
-  
-  .bell-icon {
-    width: 30px; /* Adjust the size as needed */
-    height: 30px; /* Adjust the size as needed */
+}
+
+.bell-icon {
+    width: 30px;
+    /* Adjust the size as needed */
+    height: 30px;
+    /* Adjust the size as needed */
     margin-right: 15px;
     cursor: pointer;
-  }
-  
-  .search-bar {
+}
+
+.search-bar {
     /* Add styles for your search bar */
-  }
-  
-  .content {
+}
+
+.content {
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
-  
-  /* Class for adjusting padding in one place */
-  .navbar-item {
-    padding: 5px; /* Adjust padding as needed */
-  }
-  
-    .navbar-item span{
-        color: white;
+}
+
+/* Class for adjusting padding in one place */
+.navbar-item {
+    padding: 5px;
+    /* Adjust padding as needed */
+}
+
+.navbar-item span {
+    color: white;
     padding: 10px;
-  }
+}

@@ -41,20 +41,23 @@ const Navbar = () => {
             <div className="content">
                 <div className="left-section">
                     <div className="logo-container navbar-item">
-                        <img
-                            src="/netflix_official_logo_icon_168085.png"
-                            alt="Logo"
-                            className="logo"
-                            onClick={() => {
-                                // Handle logo click action
-                            }}
-                        />
+                        <Link to="/">
+                            <img
+                                src="/netflix_official_logo_icon_168085.png"
+                                alt="Logo"
+                                className="logo"
+                                onClick={() => {
+
+                                    // Handle logo click action
+                                }}
+                            />
+                        </Link>
                     </div>
                     <div className="nav-links navbar-item">
                         <Link to="/"><span>Home</span></Link>
                         <Link to="/series"><span>Series</span></Link>
                         <Link to="/movies"><span>Movies</span></Link>
-                        <Link to="/my-list"><span>My List</span></Link>
+                        <Link to="/mylist"><span>My List</span></Link>
                     </div>
                 </div>
                 <div className="right-section">
