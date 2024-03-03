@@ -3,6 +3,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+
 }
 
 body::before {
@@ -14,6 +16,7 @@ body::before {
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
     /* Adjust the last value for opacity (0.8 in this example) */
+    pointer-events: none;
 }
 
 form {

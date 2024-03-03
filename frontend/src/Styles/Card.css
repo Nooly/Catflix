@@ -1,0 +1,83 @@
+/* Card.css */
+
+.card-container {
+
+    position: relative;
+    width: 300px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+    border: 1px solid #ccc; /* Add border or customize as needed */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.1); /* Adjust the scaling effect on hover */
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background on hover */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Text color on hover */
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-container:hover .hover-content {
+    transform: translateY(0);
+  }
+  
+  .icon1 {
+    width: 50px; /* Adjust the size of the icon */
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .icon2,
+  .icon3 {
+    width: 30px; /* Adjust the size of the icons */
+    height: auto;
+  }
+  
+  .text-container {
+    text-align: center;
+  }
+  
+  .details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .icon1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.youtube-player {
+    width: 100%; /* Make sure the YouTube player takes the full width */
+}

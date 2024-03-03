@@ -1,0 +1,60 @@
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+.pop-container{
+    position: relative;
+    height: 300px;
+    background-color: #232323;
+}
+.video-container {
+    position: relative;
+    height: 195px;
+    overflow: hidden;
+    width: 320px;
+  }
+  
+  .custom-mute-button {
+    position: absolute;
+    margin-left: 10px;
+    bottom: 0;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    background-color: white;
+    border-radius: 100%;
+  }
+
+.custom-play-button{
+    position: absolute;
+    margin-left: 10px;
+    /* bottom: 0; */
+    margin-top: 5px;
+
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.custom-add-button {
+    position: absolute;
+    margin-left:60px;
+    /* bottom: 0; */
+    margin-top: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.information-div{
+  position: absolute;
+  /* margin-top: 70px; */
+  bottom: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}

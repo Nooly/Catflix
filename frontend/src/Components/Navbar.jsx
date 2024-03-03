@@ -1,8 +1,7 @@
 // Navbar.jsx
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../Styles/Navbar.css'; // You can create a separate CSS file for styling
+import { React, useState, useEffect, Link } from '../imports.js';
+import '../Styles/Navbar.css';
 
 const Navbar = () => {
     // State for storing scroll opacity
