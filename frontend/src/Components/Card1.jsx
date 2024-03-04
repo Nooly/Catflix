@@ -1,5 +1,5 @@
 import { React, useState, useEffect, axios, useContext, PropTypes } from '../imports.js';
-import '../Styles/Carousel.css';
+// import '../Styles/Carousel.css';
 import { User } from '../User.jsx';
 import YoutubePlayer from './YoutubePlayer.jsx';
 
@@ -26,10 +26,12 @@ const Card = () => {
 
     const handleMouseEnter = () => {
         setIsHovered(true);
+        console.log("hover")
     };
 
     const handleMouseLeave = () => {
         setIsHovered(false);
+        console.log(" nothover")
     };
 
     if (!movie) return null;

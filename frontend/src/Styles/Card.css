@@ -81,3 +81,8 @@
 .youtube-player {
     width: 100%; /* Make sure the YouTube player takes the full width */
 }
+
+.thumb{
+  width: auto;
+  height: 200px;
+}

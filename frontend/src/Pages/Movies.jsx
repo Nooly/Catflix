@@ -1,5 +1,6 @@
-import Card from '../Components/Card.jsx';
+import Card from '../Components/Card1.jsx';
 import CardPop from '../Components/CardPop.jsx';
+import DataCarousel from '../Components/DataCarousel.jsx';
 import Navbar from '../Components/Navbar.jsx';
 import { User } from '../User.jsx';
 import { React, axios, useContext, useEffect, useNavigate } from '../imports.js'
@@ -48,7 +49,8 @@ export const Movies = () => {
                     <Card key={index} movie={movie} />
                 ))}
             </div> */}
-                <CardPop></CardPop>
+            {/* <CardPop></CardPop> */}
+            <DataCarousel></DataCarousel>
         </div>
     )
 }
