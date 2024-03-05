@@ -6,26 +6,7 @@ import { Paper, Button, Grid } from '@mui/material'
 import CardPop from './CardPop.jsx';
 import MyCard from './MyCard.jsx';
 
-const DataCarousel = () => {
-
-  const [movies, setMovies] = useState([]);
-  const { state, dispatch: ctxDispatch } = useContext(User);
-  const { userInfo } = state;
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get(`/api/v1/movies`, {
-          headers: { 'Authorization': `Bearer ${userInfo.token}` },
-        });
-        setMovies(data.movies);
-      } catch (error) {
-        console.error('Error fetching movies data:', error);
-      }
-    };
-    getData();
-  }, []);
-
+const DataCarousel = (props) => {
 
   // Function to group movies into arrays of three elements
   const groupItems = (items, groupSize) => {
@@ -37,36 +18,40 @@ const DataCarousel = () => {
   };
 
   return (
-    <div>
-      <Carousel className="carousel-container"
-        autoPlay={false}
-        animation="slide"
-        duration={700}
-        navButtonsAlwaysVisible={true}
-        stopAutoPlayOnHover={true}
-        cycleNavigation={true}
-        fullHeightHover={true}
-        indicators={false}
-      >
-        {groupItems(movies, 3).map((groupedItems, groupId) => (
-          <Grid container spacing={2} key={groupId}>
-            {groupedItems.map((item, itemIndex) => (
-              <Grid item xs={4} key={itemIndex}>
-                <Item key={itemIndex} item={item} />
+    <div>      
+      {props && props.data && props.data.length > 0 &&
+        <div>
+          <h1>{props.data[0]}</h1>
+          <Carousel className="carousel-container"
+            autoPlay={false}
+            animation="slide"
+            duration={700}
+            navButtonsAlwaysVisible={true}
+            stopAutoPlayOnHover={true}
+            cycleNavigation={true}
+            fullHeightHover={true}
+            indicators={false}
+          >
+            {groupItems(props.data[1], 3).map((groupedItems, groupId) => (
+              <Grid container spacing={2} key={groupId}>
+                {groupedItems.map((item, itemIndex) => (
+                  <Grid item xs={4} key={itemIndex}>
+                    <Item key={itemIndex} item={item} />
+                  </Grid>
+                ))}
               </Grid>
             ))}
-          </Grid>
-        ))}
-      </Carousel>
+
+          </Carousel>
+        </div>
+      }
     </div>
+
   );
 }
 function Item(props) {
-  const Meow = () => {
-    console.log(props.item.title)
-  }
   return (
-    <div>
+    <div className='Card-Caro'>
       <MyCard data={props.item}></MyCard>
     </div>
 

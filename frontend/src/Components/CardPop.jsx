@@ -45,13 +45,14 @@ const CardPop = (props) => {
 
 
     useEffect(() => {        
+
         if (videoElement) {
-            if (isMute) {
-                videoElement.target.mute();
-            }
-            else {
-                videoElement.target.unMute();
-            }
+            // if (isMute) {
+            //     videoElement.target.mute();
+            // }
+            // else {
+            //     videoElement.target.unMute();
+            // }
         }
     }, [videoElement, isMute]);
 
@@ -60,8 +61,8 @@ const CardPop = (props) => {
     };
 
     return (
-        <div className='pop-container'>
-            <div>
+        <div className='pop-container popout'>
+            <div className='pop-content'>
                 <div className='video-container'>
                     <YouTube videoId={vidID} opts={opts} onReady={_onReady} />
                     {isMute ?
@@ -69,12 +70,12 @@ const CardPop = (props) => {
                         :
                         <button className='custom-mute-button bi-volume-up-fill' onClick={toggleMute}></button>
                     }
-
                 </div>
                 <button className='custom-play-button bi-play-fill' onClick={playMovie}></button>
                 <button className='custom-add-button bi-dash-lg' onClick={addMyList}></button>
                 <div className='information-div'>
-                    <span>{props.data.genre} </span><span>{props.data.duation}</span>
+                    <span>{props.data.genre} </span>
+                    {/* <span>{props.data.duation}</span> */}
                     {/* <div>{props.data.description}</div> */}
                 </div>
             </div>

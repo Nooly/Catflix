@@ -1,9 +1,16 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 .pop-container{
     position: relative;
-    height: 300px;
+    /* height: 500px; */
+    height: 400px;
     background-color: #232323;
+    /* width: 500px; */
+    /* overflow: hidden; */
+    /* zoom: 1.2; */
+    scale: 1.5;
 }
+
+
 .video-container {
     position: relative;
     height: 195px;
@@ -57,4 +64,20 @@
   bottom: 0;
   margin-bottom: 10px;
   margin-left: 10px;
+}
+
+.popout {
+  animation: popout 1s ease;
+  -webkit-animation: popout 1s ease;
+
+}
+@keyframes popout {
+  from{transform:scale(0)}
+  80%{transform:scale(1.2)}
+  to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+  from{-webkit-transform:scale(0)}
+  80%{-webkit-transform:scale(1.2)}
+  to{-webkit-transform:scale(1)}
 }

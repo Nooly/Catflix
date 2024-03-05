@@ -6,4 +6,18 @@
 
     min-width: 1000px;
     margin-top: 100px;
+    /* width: 100px; */
+    margin: auto;
+    /* height: fit-content; */
+}
+
+.testGrid{
+    /* max-height: 300px; */
+    /* height: 400px; */
+    width: 500px;
+    /* transform: 1.5; */
+    position: absolute;
+}
+.Card-Caro{
+    position: relative;
 }
