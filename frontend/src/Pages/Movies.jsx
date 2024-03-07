@@ -1,4 +1,4 @@
-import { Billboard } from '../Components/Billboard.jsx';
+import Billboard from '../Components/Billboard.jsx';
 import Card from '../Components/Card1.jsx';
 import CardPop from '../Components/CardPop.jsx';
 import DataCarousel from '../Components/DataCarousel.jsx';
@@ -50,10 +50,10 @@ export const Movies = () => {
         <div>
             <Navbar></Navbar>
             <Billboard data={billBoardMovie}></Billboard>
-            {movies.map((carouselData) => (
-                <DataCarousel data={carouselData}></DataCarousel>
+            {movies.map((movieData, index) => (
+                <DataCarousel key={index} data={movieData}></DataCarousel>
             ))}
-            
+
         </div>
     )
 }

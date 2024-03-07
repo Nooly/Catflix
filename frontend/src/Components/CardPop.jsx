@@ -2,17 +2,13 @@ import { React, useEffect, useState } from '../imports.js'
 import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/CardPop.css';
+import { extractYouTubeVideoId } from '../utils.js';
 
 let videoElement = null;
 
 const CardPop = (props) => {
     const [isMute, setIsMute] = useState(true);
     const vidID = extractYouTubeVideoId(props.data.trailer);
-    function extractYouTubeVideoId(url) {
-        return url.includes("youtu.be/")
-            ? url.slice(url.lastIndexOf("/") + 1)
-            : url.slice(url.indexOf("v=") + 2).split("&")[0];
-    }
 
     const toggleMute = () => {
         setIsMute(!isMute);

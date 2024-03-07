@@ -14,4 +14,10 @@ const checkAuthentication = async (userInfo) => {
     }
 };
 
-export { checkAuthentication };
+const extractYouTubeVideoId = (url) => {
+    return url.includes("youtu.be/")
+        ? url.slice(url.lastIndexOf("/") + 1)
+        : url.slice(url.indexOf("v=") + 2).split("&")[0];
+}
+
+export { checkAuthentication, extractYouTubeVideoId };

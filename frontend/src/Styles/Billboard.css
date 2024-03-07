@@ -1,0 +1,66 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+.billboard-container {
+    width: 100%;
+    scale: 1;
+    position: relative;
+  }
+  
+  .billboard-video-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio, adjust as needed */
+    position: relative;
+  }
+  
+  .billboard-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .billboard-information {
+    position: absolute;
+    bottom: 30%;
+    left: 2%;
+  }
+  
+  /* Your existing styles for other elements */
+  
+  .billboard-image {
+    width: 30em;
+    height: 5em;
+  }
+  
+  .billboard-description {
+    width:30em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  .billboard-play-button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: white;
+    border-radius: 10%;
+    margin: 10px;
+  }
+  
+  .billboard-info-button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: gray;
+    border-radius: 10%;
+    margin: 10px;
+  }
+  
