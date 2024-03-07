@@ -3,7 +3,6 @@ import { extractYouTubeVideoId } from '../utils.js';
 import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/Billboard.css';
-import { data } from '../../../backend/data.js';
 
 let videoElement = null;
 
