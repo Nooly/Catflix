@@ -65,16 +65,14 @@ const Navbar = () => {
                         TEMP SEARCHBAR
                     </div>
                     <div className="icons navbar-item">
-                        <img
-                            src="/path/to/your/bell-icon.png"
-                            alt="Bell Icon"
-                            className="bell-icon"
+                        <div
+                            className="bi bi-bell"
                             onClick={() => {
                                 // Handle bell icon click action
                             }}
                         />
                         {/* Add your drop-down list component here */}
-                        TEMP DROPDOWN LIST
+                         TEMP DROPDOWN LIST
                     </div>
                 </div>
             </div>

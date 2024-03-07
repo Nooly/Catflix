@@ -14,6 +14,8 @@ const CardPop = (props) => {
     const { state, dispatch: ctxDispatch } = useContext(User);
     const { userInfo } = state;
 
+    const [isMyList, setIsMyList] = useState(true);
+
     const toggleMute = () => {
         setIsMute(!isMute);
     }
@@ -36,12 +38,42 @@ const CardPop = (props) => {
             if (response.status === 200) {
                 console.log('Movie added to myList successfully');
                 // You can update the UI or provide feedback to the user here
+                setIsMyList(true);
             } else {
                 console.error('Failed to add movie to myList');
                 // Handle the error and provide feedback to the user
             }
         } catch (error) {
             console.error('Error adding movie to myList:', error);
+            // Handle the error and provide feedback to the user
+        }
+    };
+
+    const removeMyList = async () => {
+        console.log(props.data)
+        try {
+            const response = await axios.post(`/api/v1/users/user-my-list-remove`, {
+                movie: props.data, // Spread the props to include all properties
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.status === 200) {
+                console.log('Movie removed from myList successfully');
+                // You can update the UI or provide feedback to the user here
+                setIsMyList(false);
+                if (props.onMyListRemoveItem){
+                    props.onMyListRemoveItem();
+                }
+            } else {
+                console.error('Failed to remove movie to myList');
+                // Handle the error and provide feedback to the user
+            }
+        } catch (error) {
+            console.error('Error removing movie to myList:', error);
             // Handle the error and provide feedback to the user
         }
     };
@@ -92,11 +124,15 @@ const CardPop = (props) => {
                     }
                 </div>
                 <button className='custom-play-button bi-play-fill' onClick={playMovie}></button>
-                <button className='custom-add-button bi-dash-lg' onClick={addMyList}></button>
+                {isMyList ?
+                    <button className='custom-remove-button bi-dash-lg' onClick={removeMyList}></button>
+                    :
+                    <button className='custom-add-button bi-plus-lg' onClick={addMyList}></button>
+
+                }
+
                 <div className='information-div'>
                     <span>{props.data.genre} </span>
-                    {/* <span>{props.data.duation}</span> */}
-                    {/* <div>{props.data.description}</div> */}
                 </div>
             </div>
         </div>

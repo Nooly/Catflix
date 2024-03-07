@@ -15,6 +15,12 @@ const MyCard = (props) => {
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+
+    const handleMyListRemoveItem = () =>{
+        if (props.onMyListRemoveItem){
+            props.onMyListRemoveItem();
+        }
+    }
     return (
         <div
             onMouseEnter={handleMouseEnter}
@@ -23,7 +29,7 @@ const MyCard = (props) => {
             {!isHovered ?
                 <img className='thumb' src={props.data.imgThumb} alt={props.data.title} />
                 :
-                <CardPop data={props.data}></CardPop>
+                <CardPop data={props.data} onMyListRemoveItem={handleMyListRemoveItem}></CardPop>
             }
 
         </div>

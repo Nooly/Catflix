@@ -39,14 +39,18 @@ export const MyList = () => {
       }
     };
     getData();
-  }, []);
+  }, [myList]);
+
+  const handleMyListRemoveItem = () =>{
+    console.log("need to remove here")
+  };
 
   return (
     <div>
       <Navbar></Navbar>
       {myList.length > 0 &&
         myList.map((data, index) => (
-          <MyCard key={index} data={data}></MyCard>
+          <MyCard key={index} data={data} onMyListRemoveItem={handleMyListRemoveItem}></MyCard>
         ))
       }
     </div>
