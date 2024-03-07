@@ -1,4 +1,5 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
+
 export const genres = [
   'Action',
   'Comedy',
