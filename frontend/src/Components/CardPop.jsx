@@ -1,14 +1,18 @@
-import { React, useEffect, useState } from '../imports.js'
+import { React, axios, useContext, useEffect, useState } from '../imports.js'
 import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/CardPop.css';
 import { extractYouTubeVideoId } from '../utils.js';
+import { User } from '../User.jsx';
 
 let videoElement = null;
 
 const CardPop = (props) => {
     const [isMute, setIsMute] = useState(true);
     const vidID = extractYouTubeVideoId(props.data.trailer);
+
+    const { state, dispatch: ctxDispatch } = useContext(User);
+    const { userInfo } = state;
 
     const toggleMute = () => {
         setIsMute(!isMute);
@@ -18,9 +22,29 @@ const CardPop = (props) => {
 
     }
 
-    const addMyList = () => {
+    const addMyList = async () => {
+        try {
+            const response = await axios.post(`/api/v1/users/user-my-list-add`, {
+                movie: props.data, // Spread the props to include all properties
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
+                    'Content-Type': 'application/json',
+                },
+            });
 
-    }
+            if (response.status === 200) {
+                console.log('Movie added to myList successfully');
+                // You can update the UI or provide feedback to the user here
+            } else {
+                console.error('Failed to add movie to myList');
+                // Handle the error and provide feedback to the user
+            }
+        } catch (error) {
+            console.error('Error adding movie to myList:', error);
+            // Handle the error and provide feedback to the user
+        }
+    };
 
     const opts = {
         height: "195",
@@ -40,7 +64,7 @@ const CardPop = (props) => {
 
 
 
-    useEffect(() => {        
+    useEffect(() => {
 
         if (videoElement) {
             // if (isMute) {

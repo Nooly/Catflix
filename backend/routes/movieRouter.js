@@ -5,7 +5,7 @@ import { isAuth } from '../utils.js';
 
 const moviesRouter = express.Router();
 
-// moviesRouter.use(isAuth);
+moviesRouter.use(isAuth);
 
 moviesRouter.get('/', expressAsyncHandler(getMoviePage));
 

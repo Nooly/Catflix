@@ -1,6 +1,4 @@
 import Billboard from '../Components/Billboard.jsx';
-import Card from '../Components/Card1.jsx';
-import CardPop from '../Components/CardPop.jsx';
 import DataCarousel from '../Components/DataCarousel.jsx';
 import Navbar from '../Components/Navbar.jsx';
 import { User } from '../User.jsx';

@@ -63,4 +63,43 @@ const signin = async (req, res) => {
     res.status(401).send({ message: "Invalid User/Password" });
 }
 
-export { checkAuth, signup, signin };
+const addToMyList = async (req, res) => {
+    try {
+        const user = await User.findOne({ token: req.params.token });
+
+        if (user) {
+            const { movie } = req.body;
+
+            // Assuming the movie is an object with details
+            if (movie) {
+                user.myList.push(movie);
+                await user.save();
+                res.status(200).send({ message: "Movie added to myList successfully" });
+            } else {
+                res.status(400).send({ message: "Invalid movie details in the request body" });
+            }
+        } else {
+            res.status(404).send({ message: "User not found" });
+        }
+    } catch (error) {
+        console.error("Error adding movie to myList:", error);
+        res.status(500).send({ message: "Internal server error" });
+    }
+};
+
+const removeFromMyList = async (req, res) => {
+    const user = await User.findOne({ token: req.params.token });
+    if (user) {
+
+        res.send();
+    }
+    else res.status(404).send({ message: "User not found" });
+};
+
+const getMyList = async (req, res) => {
+    const user = await User.findOne({ token: req.params.token });
+    if (user) res.send(user.myList);
+    else res.status(404).send({ message: "User not found" });
+};
+
+export { checkAuth, signup, signin, addToMyList, removeFromMyList, getMyList };
