@@ -13,7 +13,7 @@ const Billboard = (props) => {
   const [item, setItem] = useState();
 
   useEffect(() => {
-    console.log(item)
+    // console.log(item)
     if (props.data) {
       if (!item)
         setItem(props.data)

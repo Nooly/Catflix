@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/CardPop.css';
 import { extractYouTubeVideoId } from '../utils.js';
 import { User } from '../User.jsx';
+import { USER_ADD_MY_LIST, USER_REMOVE_MY_LIST } from '../actions.jsx';
 
 let videoElement = null;
 
@@ -14,7 +15,13 @@ const CardPop = (props) => {
     const { state, dispatch: ctxDispatch } = useContext(User);
     const { userInfo } = state;
 
-    const [isMyList, setIsMyList] = useState(true);
+    const [isInMyList, setIsInMyList] = useState(false);
+
+    useEffect(() => {
+        setIsInMyList(checkInMyList(props.data));
+    }, [userInfo, isInMyList])
+
+    const checkInMyList = (movie) => { return userInfo.myList.some((m) => m._id === movie._id); };
 
     const toggleMute = () => {
         setIsMute(!isMute);
@@ -26,8 +33,10 @@ const CardPop = (props) => {
 
     const addMyList = async () => {
         try {
+            const movie = props.data;
             const response = await axios.post(`/api/v1/users/user-my-list-add`, {
-                movie: props.data, // Spread the props to include all properties
+                email: userInfo.email,
+                movie: movie, // Spread the props to include all properties
             }, {
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
@@ -38,7 +47,8 @@ const CardPop = (props) => {
             if (response.status === 200) {
                 console.log('Movie added to myList successfully');
                 // You can update the UI or provide feedback to the user here
-                setIsMyList(true);
+                ctxDispatch({ type: USER_ADD_MY_LIST, payload: movie });
+                setIsInMyList(true);
             } else {
                 console.error('Failed to add movie to myList');
                 // Handle the error and provide feedback to the user
@@ -50,10 +60,14 @@ const CardPop = (props) => {
     };
 
     const removeMyList = async () => {
-        console.log(props.data)
+        // console.log(props.data)
         try {
+            const movie = props.data;
+            console.log(movie._id)
+
             const response = await axios.post(`/api/v1/users/user-my-list-remove`, {
-                movie: props.data, // Spread the props to include all properties
+                email: userInfo.email,
+                movie: movie,
             }, {
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
@@ -64,8 +78,9 @@ const CardPop = (props) => {
             if (response.status === 200) {
                 console.log('Movie removed from myList successfully');
                 // You can update the UI or provide feedback to the user here
-                setIsMyList(false);
-                if (props.onMyListRemoveItem){
+                ctxDispatch({ type: USER_REMOVE_MY_LIST, payload: movie._id });
+                setIsInMyList(false);
+                if (props.onMyListRemoveItem) {
                     props.onMyListRemoveItem();
                 }
             } else {
@@ -124,7 +139,7 @@ const CardPop = (props) => {
                     }
                 </div>
                 <button className='custom-play-button bi-play-fill' onClick={playMovie}></button>
-                {isMyList ?
+                {isInMyList ?
                     <button className='custom-remove-button bi-dash-lg' onClick={removeMyList}></button>
                     :
                     <button className='custom-add-button bi-plus-lg' onClick={addMyList}></button>
