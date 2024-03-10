@@ -21,22 +21,22 @@ const CardPop = (props) => {
         setIsInMyList(checkInMyList(props.data));
     }, [userInfo, isInMyList])
 
-    const checkInMyList = (movie) => { return userInfo.myList.some((m) => m._id === movie._id); };
+    const checkInMyList = (content) => { return userInfo.myList.some((c) => c._id === content._id); };
 
     const toggleMute = () => {
         setIsMute(!isMute);
     }
 
-    const playMovie = () => {
+    const playContent = () => {
 
     }
 
     const addMyList = async () => {
         try {
-            const movie = props.data;
+            const content = props.data;
             const response = await axios.post(`/api/v1/users/user-my-list-add`, {
                 email: userInfo.email,
-                movie: movie, // Spread the props to include all properties
+                content: content, // Spread the props to include all properties
             }, {
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
@@ -45,16 +45,16 @@ const CardPop = (props) => {
             });
 
             if (response.status === 200) {
-                console.log('Movie added to myList successfully');
+                console.log('Content added to myList successfully');
                 // You can update the UI or provide feedback to the user here
-                ctxDispatch({ type: USER_ADD_MY_LIST, payload: movie });
+                ctxDispatch({ type: USER_ADD_MY_LIST, payload: content });
                 setIsInMyList(true);
             } else {
-                console.error('Failed to add movie to myList');
+                console.error('Failed to add content to myList');
                 // Handle the error and provide feedback to the user
             }
         } catch (error) {
-            console.error('Error adding movie to myList:', error);
+            console.error('Error adding content to myList:', error);
             // Handle the error and provide feedback to the user
         }
     };
@@ -62,12 +62,12 @@ const CardPop = (props) => {
     const removeMyList = async () => {
         // console.log(props.data)
         try {
-            const movie = props.data;
-            console.log(movie._id)
+            const content = props.data;
+            // console.log(content._id)
 
             const response = await axios.post(`/api/v1/users/user-my-list-remove`, {
                 email: userInfo.email,
-                movie: movie,
+                content: content,
             }, {
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`, // Adjust this based on your authentication logic
@@ -76,19 +76,19 @@ const CardPop = (props) => {
             });
 
             if (response.status === 200) {
-                console.log('Movie removed from myList successfully');
+                console.log('Content removed from myList successfully');
                 // You can update the UI or provide feedback to the user here
-                ctxDispatch({ type: USER_REMOVE_MY_LIST, payload: movie._id });
+                ctxDispatch({ type: USER_REMOVE_MY_LIST, payload: content._id });
                 setIsInMyList(false);
                 if (props.onMyListRemoveItem) {
                     props.onMyListRemoveItem();
                 }
             } else {
-                console.error('Failed to remove movie to myList');
+                console.error('Failed to remove content to myList');
                 // Handle the error and provide feedback to the user
             }
         } catch (error) {
-            console.error('Error removing movie to myList:', error);
+            console.error('Error removing content to myList:', error);
             // Handle the error and provide feedback to the user
         }
     };
@@ -138,7 +138,7 @@ const CardPop = (props) => {
                         <button className='custom-mute-button bi-volume-up-fill' onClick={toggleMute}></button>
                     }
                 </div>
-                <button className='custom-play-button bi-play-fill' onClick={playMovie}></button>
+                <button className='custom-play-button bi-play-fill' onClick={playContent}></button>
                 {isInMyList ?
                     <button className='custom-remove-button bi-dash-lg' onClick={removeMyList}></button>
                     :

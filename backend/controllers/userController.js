@@ -72,27 +72,27 @@ const addToMyList = async (req, res) => {
         const { email } = req.body;
         const user = await User.findOne({ email: email });
         if (user) {
-            const { movie } = req.body;
-            // Assuming the movie is an object with details
-            if (movie) {
-                // Check if the movie is already in the myList array
-                const isMovieAlreadyAdded = user.myList.some((m) => m._id === movie._id);
-                if (!isMovieAlreadyAdded) {
-                    // If the movie is not already added, push it to the myList array
-                    user.myList.push(movie);
+            const { content } = req.body;
+            // Assuming the content is an object with details
+            if (content) {
+                // Check if the content is already in the myList array
+                const isContentAlreadyAdded = user.myList.some((c) => c._id === content._id);
+                if (!isContentAlreadyAdded) {
+                    // If the content is not already added, push it to the myList array
+                    user.myList.push(content);
                     await user.save();
-                    res.status(200).send({ message: "Movie added to myList successfully" });
+                    res.status(200).send({ message: "Content added to myList successfully" });
                 } else {
-                    res.status(400).send({ message: "Movie already exists in myList" });
+                    res.status(400).send({ message: "Content already exists in myList" });
                 }
             } else {
-                res.status(400).send({ message: "Invalid movie details in the request body" });
+                res.status(400).send({ message: "Invalid content details in the request body" });
             }
         } else {
             res.status(404).send({ message: "User not found" });
         }
     } catch (error) {
-        console.error("Error adding movie to myList:", error);
+        console.error("Error adding content to myList:", error);
         res.status(500).send({ message: "Internal server error" });
     }
 };
@@ -102,29 +102,29 @@ const removeFromMyList = async (req, res) => {
         const { email } = req.body;
         const user = await User.findOne({ email: email });
         if (user) {
-            const { movie } = req.body;
+            const { content } = req.body;
 
-            // Assuming the movie is an object with details
-            if (movie) {
-                // Find the index of the movie in the myList array
-                const index = user.myList.findIndex((m) => m._id === movie._id);
+            // Assuming the content is an object with details
+            if (content) {
+                // Find the index of the content in the myList array
+                const index = user.myList.findIndex((c) => c._id === content._id);
 
                 if (index !== -1) {
-                    // Remove the movie from the myList array
+                    // Remove the content from the myList array
                     user.myList.splice(index, 1);
                     await user.save();
-                    res.status(200).send({ message: "Movie removed from myList successfully" });
+                    res.status(200).send({ message: "Content removed from myList successfully" });
                 } else {
-                    res.status(404).send({ message: "Movie not found in myList" });
+                    res.status(404).send({ message: "Content not found in myList" });
                 }
             } else {
-                res.status(400).send({ message: "Invalid movie details in the request body" });
+                res.status(400).send({ message: "Invalid content details in the request body" });
             }
         } else {
             res.status(404).send({ message: "User not found" });
         }
     } catch (error) {
-        console.error("Error removing movie from myList:", error);
+        console.error("Error removing content from myList:", error);
         res.status(500).send({ message: "Internal server error" });
     }
 };
