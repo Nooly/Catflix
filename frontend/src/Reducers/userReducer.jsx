@@ -22,7 +22,7 @@ const userReducer = (state, action) => {
         case USER_REMOVE_MY_LIST: {
             const updatedUserInfo = {
                 ...state.userInfo,
-                myList: state.userInfo.myList.filter(movie => movie._id !== action.payload), // Assuming action.payload is the movie id to remove
+                myList: state.userInfo.myList.filter(content => content._id !== action.payload), // Assuming action.payload is the movie id to remove
             };
             localStorage.setItem('userInfo', JSON.stringify(updatedUserInfo));
             return { ...state, userInfo: updatedUserInfo };

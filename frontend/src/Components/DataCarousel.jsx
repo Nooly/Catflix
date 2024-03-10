@@ -8,7 +8,7 @@ import MyCard from './MyCard.jsx';
 
 const DataCarousel = (props) => {
 
-  // Function to group movies into arrays of three elements
+  // Function to group contents into arrays of three elements
   const groupItems = (items, groupSize) => {
     const grouped = [];
     for (let i = 0; i < items.length; i += groupSize) {

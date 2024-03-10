@@ -1,4 +1,5 @@
 import Series from "../models/Series.js";
+import { createCarouselItemGenre, getRandomContent } from "../utils.js";
 
 const getSerieses = async (req, res) => {
     const serieses = await Series.find();
@@ -21,4 +22,14 @@ const getSeriesByToken = async (req, res) => {
     else res.status(404).send({ message: "Series not found" });
 }
 
-export { getSerieses, getSeriesesByGenre, getSeriesByToken };
+const getSeriesPage = async (req, res) => {
+    const serieses = await Series.find();
+    const seriesesPage = [{ billboard: null }, { serieses: [] }];
+    seriesesPage[0].billboard = getRandomContent(serieses)
+    seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Animation", "Cartoons & Anime"));
+    seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Comedy", "Peak Comedy"));
+    res.send({ seriesesPage });
+};
+
+
+export { getSerieses, getSeriesesByGenre, getSeriesByToken, getSeriesPage };

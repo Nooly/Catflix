@@ -22,4 +22,10 @@ const isAuth = async (req, res, next) => {
     }
   };
 
-export { generateToken,isAuth }
+  const createItem = (title, contents) => { return [title, contents]; }
+  const filterContentByGenre = (contents, genre) => { return contents.filter((m) => m.genre == genre); };
+  const createCarouselItemGenre = (contents, genre, title) => { return createItem(title, filterContentByGenre(contents, genre)); }
+  const getRandomContent = (contents) => { return contents[Math.floor(Math.random() * contents.length)] };
+  
+
+export { generateToken,isAuth, getRandomContent, createCarouselItemGenre  }
