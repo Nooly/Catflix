@@ -1,4 +1,4 @@
-import { React, axios, useContext, useEffect, useState } from '../imports.js'
+import { React, axios, useContext, useEffect, useNavigate, useState } from '../imports.js'
 import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/CardPop.css';
@@ -15,11 +15,16 @@ const CardPop = (props) => {
     const { state, dispatch: ctxDispatch } = useContext(User);
     const { userInfo } = state;
 
+    const [isMovie, setIsMovie] = useState();
+
     const [isInMyList, setIsInMyList] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsInMyList(checkInMyList(props.data));
-    }, [userInfo, isInMyList])
+        props.data.movie ? setIsMovie(true) : setIsMovie(false);
+    }, [userInfo, isInMyList, isMovie])
 
     const checkInMyList = (content) => { return userInfo.myList.some((c) => c._id === content._id); };
 
@@ -28,7 +33,7 @@ const CardPop = (props) => {
     }
 
     const playContent = () => {
-
+        
     }
 
     const addMyList = async () => {
@@ -147,6 +152,11 @@ const CardPop = (props) => {
                 }
 
                 <div className='information-div'>
+                    {isMovie ?
+                        <span>This is a movie </span>
+                        :
+                        <span>This is a series (not a movie) </span>
+                    }
                     <span>{props.data.genre} </span>
                 </div>
             </div>

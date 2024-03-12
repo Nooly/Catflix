@@ -6,6 +6,7 @@ import seedRouter from "./routes/seedRouter.js";
 import usersRouter from "./routes/userRouter.js";
 import moviesRouter from "./routes/movieRouter.js";
 import seriesesRouter from "./routes/seriesRouter.js";
+import contentsRouter from "./routes/contentRouter.js";
 
 // Create an instance of an Express application
 const app = express();
@@ -25,9 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 8080;
 
 app.use("/api/v1/seed", seedRouter);
-app.use("/api/v1/users", usersRouter)
-app.use("/api/v1/movies", moviesRouter)
-app.use("/api/v1/serieses", seriesesRouter)
+app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/movies", moviesRouter);
+app.use("/api/v1/serieses", seriesesRouter);
+app.use("/api/v1/contents", contentsRouter);
 
 // Middleware for handling errors
 app.use((err, req, res, next) => {

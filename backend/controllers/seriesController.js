@@ -1,5 +1,5 @@
 import Series from "../models/Series.js";
-import { createCarouselItemGenre, getRandomContent } from "../utils.js";
+import { createCarouselItemAll, createCarouselItemGenre, getRandomContent } from "../utils.js";
 
 const getSerieses = async (req, res) => {
     const serieses = await Series.find();
@@ -28,6 +28,7 @@ const getSeriesPage = async (req, res) => {
     seriesesPage[0].billboard = getRandomContent(serieses)
     seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Animation", "Cartoons & Anime"));
     seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Comedy", "Peak Comedy"));
+    seriesesPage[1].serieses.push(createCarouselItemAll(serieses, "All Serieses"));
     res.send({ seriesesPage });
 };
 

@@ -43,7 +43,8 @@ const signup = async (req, res) => {
         // name: user.name,
         email: user.email,
         token: generateToken(user),
-        myList: user.myList
+        myList: user.myList,
+        profilePicture: user.profilePicture
     })
 }
 
@@ -59,7 +60,8 @@ const signin = async (req, res) => {
                 // name: user.name,
                 email: user.email,
                 token: generateToken(user),
-                myList: user.myList
+                myList: user.myList,
+                profilePicture: user.profilePicture
             })
             return;
         }

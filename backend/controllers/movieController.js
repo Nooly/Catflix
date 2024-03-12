@@ -1,6 +1,5 @@
 import Movie from "../models/Movie.js";
-import Series from "../models/Series.js";
-import { createCarouselItemGenre, getRandomContent } from "../utils.js";
+import { createCarouselItemAll, createCarouselItemGenre, getRandomContent } from "../utils.js";
 
 const getMovies = async (req, res) => {
     const movies = await Movie.find();
@@ -29,20 +28,8 @@ const getMoviePage = async (req, res) => {
     moviesPage[0].billboard = getRandomContent(movies)
     moviesPage[1].movies.push(createCarouselItemGenre(movies, "Action", "Action Movies"));
     moviesPage[1].movies.push(createCarouselItemGenre(movies, "Comedy", "Best movies to laugh"));
+    moviesPage[1].movies.push(createCarouselItemAll(movies, "All movies"));
     res.send({ moviesPage });
 };
 
-// Need to move this somewhere else, for now will stay here for testing and stuff
-const getHomePage = async (req, res) => {
-    const movies = await Movie.find();
-    const serieses = await Series.find();
-    const contents = movies.concat(serieses);
-    const homePage = [{ billboard: null }, { contents: [] }];
-    homePage[0].billboard = getRandomContent(contents);
-    homePage[1].movies.push(createCarouselItemGenre(movies, "Action", "Action Action Action"));
-    homePage[1].movies.push(createCarouselItemGenre(movies, "Comedy", "HAHAHAHAHAHAHA"));
-    homePage[1].movies.push(createCarouselItemGenre(movies, "Animation", "Animations"));
-    res.send(contents);
-};
-
-export { getMovies, getMoviesByGenre, getMovieByToken, getMoviePage, getHomePage };
+export { getMovies, getMoviesByGenre, getMovieByToken, getMoviePage };

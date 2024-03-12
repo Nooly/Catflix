@@ -1,9 +1,20 @@
 // Navbar.jsx
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { Button, ButtonGroup, Dropdown, Image, Nav } from 'react-bootstrap';
 
-import { React, useState, useEffect, Link } from '../imports.js';
+import { React, useState, useEffect, Link, useNavigate, useContext } from '../imports.js';
 import '../Styles/Navbar.css';
+import { User } from '../User.jsx';
+import { USER_SIGNOUT } from '../actions.jsx';
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    const { state, dispatch: ctxDispatch } = useContext(User);
+    const { userInfo } = state;
+
+
     // State for storing scroll opacity
     const [scrollOpacity, setScrollOpacity] = useState(0.5);
 
@@ -24,6 +35,7 @@ const Navbar = () => {
 
     // Effect hook to add and remove scroll event listener
     useEffect(() => {
+
         // Add scroll event listener when the component is mounted
         window.addEventListener('scroll', handleScroll);
 
@@ -33,6 +45,11 @@ const Navbar = () => {
         };
     }, []); // Empty dependency array ensures the effect runs only on mount and unmount
 
+    const signOutHandler = () => {
+        ctxDispatch({ type: USER_SIGNOUT });
+        localStorage.removeItem('userInfo');
+        navigate("/signin");
+    };
 
     return (
         <div className="navbar">
@@ -72,11 +89,30 @@ const Navbar = () => {
                             }}
                         />
                         {/* Add your drop-down list component here */}
-                         TEMP DROPDOWN LIST
+                        <ButtonGroup>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu align="right">
+                                    {userInfo &&
+                                        <Nav.Link href="#action">
+                                            <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />
+                                            {userInfo.email}
+                                        </Nav.Link>
+                                    }
+                                    <Nav.Link>
+                                        <Button onClick={signOutHandler}>Sign Out</Button>
+                                    </Nav.Link>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </ButtonGroup>
+
                     </div>
                 </div>
             </div>
+
         </div>
+
     );
 };
 

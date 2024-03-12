@@ -40,7 +40,7 @@ const SignIn = () => {
       const { data } = await axios.post("/api/v1/users/signin", { email: email, password: password });
       ctxDispatch({ type: USER_SIGNIN, payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      // navigate("/");
+      navigate("/");
     } catch (error) {
       toast.error((error.message));
     }

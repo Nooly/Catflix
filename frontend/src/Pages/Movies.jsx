@@ -26,20 +26,22 @@ export const Movies = () => {
             checkAuth();
 
         }
+        if (userInfo) {
 
-        const getData = async () => {
-            try {
-                const { data } = await axios.get(`/api/v1/movies`, {
-                    headers: { 'Authorization': `Bearer ${userInfo.token}` },
-                });
-                setMovies(data.moviesPage[1].movies);
-                setBillBoardMovie(data.moviesPage[0].billboard);
-                // console.log(data)
-            } catch (error) {
-                console.error('Error fetching movies data:', error);
-            }
-        };
-        getData();
+            const getData = async () => {
+                try {
+                    const { data } = await axios.get(`/api/v1/movies`, {
+                        headers: { 'Authorization': `Bearer ${userInfo.token}` },
+                    });
+                    setMovies(data.moviesPage[1].movies);
+                    setBillBoardMovie(data.moviesPage[0].billboard);
+                    // console.log(data)
+                } catch (error) {
+                    console.error('Error fetching movies data:', error);
+                }
+            };
+            getData();
+        }
     }, []);
 
 

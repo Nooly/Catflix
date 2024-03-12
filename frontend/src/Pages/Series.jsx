@@ -7,47 +7,48 @@ import { checkAuthentication } from '../utils.js';
 
 export const Series = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const { state, dispatch: ctxDispatch } = useContext(User);
-    const { userInfo } = state;
-  
-    
-    const [serieses, setSerieses] = useState([]);
-    const [billBoardMovie, setBillBoardMovie] = useState(null);
+  const { state, dispatch: ctxDispatch } = useContext(User);
+  const { userInfo } = state;
 
-    useEffect(() => {
-      if (!userInfo) navigate("/signin");
-      else {
-        const checkAuth = async () => {
-          let isAuth = await checkAuthentication(userInfo);
-          if (!isAuth) navigate("/signin");
-        }
-        checkAuth();
+  const [serieses, setSerieses] = useState([]);
+  const [billBoardSeries, setbillBoardSeries] = useState(null);
+
+  useEffect(() => {
+    if (!userInfo) navigate("/signin");
+    else {
+      const checkAuth = async () => {
+        let isAuth = await checkAuthentication(userInfo);
+        if (!isAuth) navigate("/signin");
       }
+      checkAuth();
+    }
+    if (userInfo) {
 
       const getData = async () => {
         try {
-            const { data } = await axios.get(`/api/v1/serieses`, {
-                headers: { 'Authorization': `Bearer ${userInfo.token}` },
-            });
-            setSerieses(data.seriesesPage[1].serieses);
-            setBillBoardMovie(data.seriesesPage[0].billboard);
+          const { data } = await axios.get(`/api/v1/serieses`, {
+            headers: { 'Authorization': `Bearer ${userInfo.token}` },
+          });
+          setSerieses(data.seriesesPage[1].serieses);
+          setbillBoardSeries(data.seriesesPage[0].billboard);
         } catch (error) {
-            console.error('Error fetching serieses data:', error);
+          console.error('Error fetching serieses data:', error);
         }
-    };
-    getData();
+      };
+      getData();
+    }
 
-    }, []);
-    
+  }, []);
+
   return (
     <div>
-        <Navbar></Navbar>
-        <Billboard data={billBoardMovie}></Billboard>
-            {serieses.map((movieData, index) => (
-                <DataCarousel key={index} data={movieData}></DataCarousel>
-            ))}
+      <Navbar></Navbar>
+      <Billboard data={billBoardSeries}></Billboard>
+      {serieses.map((seriesData, index) => (
+        <DataCarousel key={index} data={seriesData}></DataCarousel>
+      ))}
     </div>
   )
 }

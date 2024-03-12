@@ -1,6 +1,8 @@
+import Billboard from '../Components/Billboard.jsx';
+import DataCarousel from '../Components/DataCarousel.jsx';
 import Navbar from '../Components/Navbar.jsx';
 import { User } from '../User.jsx';
-import { React, useContext, useEffect, useNavigate } from '../imports.js'
+import { React, axios, useContext, useEffect, useNavigate, useState } from '../imports.js'
 import { checkAuthentication } from '../utils.js';
 
 
@@ -11,6 +13,9 @@ const HomePage = () => {
   const { state, dispatch: ctxDispatch } = useContext(User);
   const { userInfo } = state;
 
+  const [serieses, setContents] = useState([]);
+  const [billBoardContent, setbillBoardContent] = useState(null);
+
   useEffect(() => {
     if (!userInfo) navigate("/signin");
     else {
@@ -20,34 +25,35 @@ const HomePage = () => {
       }
       checkAuth();
     }
+    if (userInfo) {
+
+      const getData = async () => {
+        try {
+          const { data } = await axios.get(`/api/v1/contents`, {
+            headers: { 'Authorization': `Bearer ${userInfo.token}` },
+          });
+          setContents(data.homePage[1].contents);
+          setbillBoardContent(data.homePage[0].billboard);
+        } catch (error) {
+          console.error('Error fetching serieses data:', error);
+        }
+      };
+      getData();
+    }
+
   }, []);
+  useEffect(() => {
+
+  }, [])
+
 
   return (
     <div>
       <Navbar></Navbar>
-      <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sint consectetur quas aut recusandae corporis quidem ut explicabo delectus porro cumque minima. Cum incidunt sit ducimus ipsam inventore repellat rem labore a quam voluptatibus beatae, nemo, recusandae illo est laborum ipsa atque aliquam tenetur sint omnis quibusdam consequatur dolore dolor?
-        
-      </div>
+      <Billboard data={billBoardContent}></Billboard>
+      {serieses.map((contentData, index) => (
+        <DataCarousel key={index} data={contentData}></DataCarousel>
+      ))}
     </div>
   )
 }

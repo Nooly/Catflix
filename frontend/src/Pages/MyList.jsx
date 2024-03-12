@@ -50,7 +50,7 @@ export const MyList = () => {
   return (
     <div>
       <Navbar></Navbar>
-      {userInfo.myList.length > 0 &&
+      {userInfo && userInfo.myList.length > 0 &&
         userInfo.myList.map((data, index) => (
           <MyCard key={index} data={data} onMyListRemoveItem={handleMyListRemoveItem}></MyCard>
         ))
