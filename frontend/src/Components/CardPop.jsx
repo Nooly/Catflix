@@ -33,7 +33,8 @@ const CardPop = (props) => {
     }
 
     const playContent = () => {
-        
+        localStorage.setItem('lastContent', JSON.stringify(props.data));
+        navigate("/watch");
     }
 
     const addMyList = async () => {

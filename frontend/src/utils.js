@@ -20,4 +20,17 @@ const extractYouTubeVideoId = (url) => {
         : url.slice(url.indexOf("v=") + 2).split("&")[0];
 }
 
-export { checkAuthentication, extractYouTubeVideoId };
+const getFilterURI = (searchFromURI, filter, skipPathName) => {
+    const searchParams = new URLSearchParams(searchFromURI);
+    const query = searchParams.get('q') || 'all';
+    const page = searchParams.get('page') || 1;
+
+    const filterPage = filter.page || page;
+    const filterQuery = filter.query || query;
+
+    const link = `${skipPathName ? "" : '/search?'}&q=${filterQuery}&page=${filterPage}`
+
+    return link;
+};
+
+export { checkAuthentication, extractYouTubeVideoId, getFilterURI };

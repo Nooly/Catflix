@@ -6,6 +6,7 @@ import { React, useState, useEffect, Link, useNavigate, useContext } from '../im
 import '../Styles/Navbar.css';
 import { User } from '../User.jsx';
 import { USER_SIGNOUT } from '../actions.jsx';
+import SearchBox from './SearchBox.jsx';
 
 const Navbar = () => {
 
@@ -78,8 +79,7 @@ const Navbar = () => {
                 </div>
                 <div className="right-section">
                     <div className="search-bar navbar-item">
-                        {/* Add your search bar component here */}
-                        TEMP SEARCHBAR
+                        <SearchBox></SearchBox>
                     </div>
                     <div className="icons navbar-item">
                         <div
@@ -91,7 +91,11 @@ const Navbar = () => {
                         {/* Add your drop-down list component here */}
                         <ButtonGroup>
                             <Dropdown>
+
                                 <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                                {userInfo &&
+                                    <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />
+                                }
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu align="right">
                                     {userInfo &&

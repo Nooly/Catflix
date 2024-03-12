@@ -9,6 +9,7 @@ import { Movies } from './Pages/Movies.jsx';
 import { Series } from './Pages/Series.jsx';
 import { MyList } from './Pages/MyList.jsx';
 import { Search } from './Pages/Search.jsx';
+import { Watch } from './Pages/Watch.jsx';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/movies' element={<Movies></Movies>}></Route>
             <Route path='/series' element={<Series></Series>}></Route>
             <Route path='/mylist' element={<MyList></MyList>}></Route>
+            <Route path='/watch' element={<Watch></Watch>}></Route>
             <Route path='/search' element={<Search></Search>}></Route>
 
           </Route>
