@@ -81,10 +81,6 @@
     cursor: pointer;
 }
 
-.search-bar {
-    /* Add styles for your search bar */
-}
-
 .content {
     display: flex;
     justify-content: space-between;

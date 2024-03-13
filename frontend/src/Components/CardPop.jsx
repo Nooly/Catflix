@@ -26,6 +26,9 @@ const CardPop = (props) => {
         props.data.movie ? setIsMovie(true) : setIsMovie(false);
     }, [userInfo, isInMyList, isMovie])
 
+    useEffect(()=>{
+    },[isMovie])
+
     const checkInMyList = (content) => { return userInfo.myList.some((c) => c._id === content._id); };
 
     const toggleMute = () => {
@@ -118,14 +121,16 @@ const CardPop = (props) => {
 
 
     useEffect(() => {
-
         if (videoElement) {
-            // if (isMute) {
-            //     videoElement.target.mute();
-            // }
-            // else {
-            //     videoElement.target.unMute();
-            // }
+            
+            if (isMute) {
+console.log("THER EEROROROR IS HERE?? ISMUTE")
+
+                videoElement.target.mute();
+            }
+            else {
+                videoElement.target.unMute();
+            }
         }
     }, [videoElement, isMute]);
 
@@ -135,6 +140,7 @@ const CardPop = (props) => {
 
     return (
         <div className='pop-container popout'>
+
             <div className='pop-content'>
                 <div className='video-container'>
                     <YouTube videoId={vidID} opts={opts} onReady={_onReady} />
@@ -151,7 +157,6 @@ const CardPop = (props) => {
                     <button className='custom-add-button bi-plus-lg' onClick={addMyList}></button>
 
                 }
-
                 <div className='information-div'>
                     {isMovie ?
                         <span>This is a movie </span>

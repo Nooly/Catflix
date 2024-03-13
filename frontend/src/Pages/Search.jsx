@@ -33,7 +33,6 @@ export const Search = () => {
     }, []);
 
     useEffect(() => {
-        console.log("in effect")
         const getContents = async () => {
             try {
                 const { data } = await axios.get(`/api/v1/contents/search?q=${query}&page=${page}`, {

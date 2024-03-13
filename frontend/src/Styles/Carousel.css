@@ -1,23 +1,33 @@
-.img-thumb  {
+.img-thumb {
     width: 225px;
     height: 100px;
 }
-.carousel-container{
+
+.carousel-container {
 
     min-width: 1000px;
     margin-top: 100px;
     /* width: 100px; */
     margin: auto;
     /* height: fit-content; */
+    /* overflow: visible; */
+    overflow: visible !important;
+
 }
 
-.testGrid{
+/* .css-ohwg9z {
+    overflow: visible !important;
+} */
+
+.testGrid {
     /* max-height: 300px; */
     /* height: 400px; */
     width: 500px;
     /* transform: 1.5; */
     position: absolute;
 }
-.Card-Caro{
+
+.Card-Caro {
     position: relative;
+    
 }

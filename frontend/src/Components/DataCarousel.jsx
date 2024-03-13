@@ -31,6 +31,7 @@ const DataCarousel = (props) => {
             cycleNavigation={true}
             fullHeightHover={true}
             indicators={false}
+            
           >
             {groupItems(props.data[1], 3).map((groupedItems, groupId) => (
               <Grid container spacing={2} key={groupId}>

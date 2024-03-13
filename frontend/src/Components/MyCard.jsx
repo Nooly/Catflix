@@ -29,7 +29,7 @@ const MyCard = (props) => {
             {!isHovered ?
                 <img className='thumb' src={props.data.imgThumb} alt={props.data.title} />
                 :
-                <CardPop data={props.data} onMyListRemoveItem={handleMyListRemoveItem}></CardPop>
+                <CardPop className='card-pop' data={props.data} onMyListRemoveItem={handleMyListRemoveItem}></CardPop>
             }
 
         </div>
