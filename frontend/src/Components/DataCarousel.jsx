@@ -18,7 +18,7 @@ const DataCarousel = (props) => {
   };
 
   return (
-    <div>      
+    <div >
       {props && props.data && props.data.length > 0 &&
         <div>
           <h1 className='text-white'>{props.data[0]}</h1>
@@ -31,21 +31,21 @@ const DataCarousel = (props) => {
             cycleNavigation={true}
             fullHeightHover={true}
             indicators={false}
-            
+
           >
             {groupItems(props.data[1], 6).map((groupedItems, groupId) => (
               // <Grid container spacing={2} key={groupId}>
               <Grid container key={groupId}>
-                <div className='flex-container-caro'>
+                <div className='flex-container-caro '>
 
-              {groupedItems.map((content, index) => (
-                  // <Grid item xs={4} key={itemIndex}>
-                  // <div className='flex-container-caro'>
+                  {groupedItems.map((content, index) => (
+                    // <Grid item xs={4} key={itemIndex}>
+                    // <div className='flex-container-caro'>
                     // <Item key={itemIndex} item={item} />
                     <MyCard className='carosel-card' data={content} key={index} ></MyCard>
-                  // </div>
-                  // </Grid>
-                ))}
+                    // </div>
+                    // </Grid>
+                  ))}
                 </div>
               </Grid>
             ))}
@@ -57,13 +57,13 @@ const DataCarousel = (props) => {
 
   );
 }
-function Item(props) {
-  return (
-    // <div className='Card-Caro'>
-      <MyCard data={props.item}></MyCard>
-    // </div>
+// function Item(props) {
+//   return (
+//     // <div className='Card-Caro'>
+//       <MyCard data={props.item}></MyCard>
+//     // </div>
 
-  )
-}
+//   )
+// }
 
 export default DataCarousel;

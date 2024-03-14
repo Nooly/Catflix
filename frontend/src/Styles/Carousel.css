@@ -1,8 +1,3 @@
-.img-thumb {
-    width: 225px;
-    height: 100px;
-}
-
 .carousel-container {
 
     min-width: 1000px;
@@ -20,20 +15,8 @@
     overflow: visible !important;
 } */
 
-.testGrid {
-    /* max-height: 300px; */
-    /* height: 400px; */
-    width: 500px;
-    /* transform: 1.5; */
-    position: absolute;
-}
-
-.Card-Caro {
-    position: relative;
-
-}
-
 .flex-container-caro {
+    position: relative;
     margin-top: 5px;
     margin-left: 50px;
     margin-right: 50px;
@@ -41,3 +24,10 @@
     flex-wrap: nowrap;
     gap: 20px;
 }
+
+/* .carosel-card {
+    position: relative;
+}
+.relative{
+    position: relative;
+} */
