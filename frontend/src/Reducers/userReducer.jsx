@@ -14,7 +14,7 @@ const userReducer = (state, action) => {
         case USER_ADD_MY_LIST: {
             const updatedUserInfo = {
                 ...state.userInfo,
-                myList: [...state.userInfo.myList, action.payload], // Assuming action.payload is the new movie to add
+                myList: [action.payload, ...state.userInfo.myList], // Assuming action.payload is the new movie to add
             };
             localStorage.setItem('userInfo', JSON.stringify(updatedUserInfo));
             return { ...state, userInfo: updatedUserInfo };
