@@ -24,7 +24,7 @@ const Billboard = (props) => {
       vidID.current = extractYouTubeVideoId(item.trailer);
 
     }
-  }, [props, item,videoElement])
+  }, [props, item])
 
   const opts = {
     width: '100%',
@@ -45,6 +45,11 @@ const Billboard = (props) => {
   const _onReady = (event) => {
     setVideoElement(event);
   };
+
+  useEffect(() => {
+
+  }, [videoElement])
+  
 
   const playContent = () => {
     localStorage.setItem('lastContent', JSON.stringify(item));
