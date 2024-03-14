@@ -24,7 +24,7 @@ const Billboard = (props) => {
       vidID.current = extractYouTubeVideoId(item.trailer);
 
     }
-  }, [props, item])
+  }, [props, item,videoElement])
 
   const opts = {
     width: '100%',
