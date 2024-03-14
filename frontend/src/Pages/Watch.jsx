@@ -6,9 +6,6 @@ import { checkAuthentication, extractYouTubeVideoId } from '../utils.js';
 import '../Styles/Watch.css';
 
 
-let videoElement = null;
-
-
 export const Watch = () => {
 
 
@@ -17,8 +14,12 @@ export const Watch = () => {
     const { state, dispatch: ctxDispatch } = useContext(User);
     const { userInfo } = state;
 
+    const [videoElement, setVideoElement] = useState(null);
+
     const [content, setContent] = useState(null);
     const [vidID, setVidID] = useState(null);
+
+
 
     useEffect(() => {
         if (!userInfo) navigate("/signin");
@@ -64,7 +65,7 @@ export const Watch = () => {
     };
 
     const _onReady = (event) => {
-        videoElement = event;
+        setVideoElement(event)
     };
 
     const previousPage = () => {
@@ -77,7 +78,7 @@ export const Watch = () => {
             navigate("/");
         }
     };
-    
+
 
     return (
         <div>

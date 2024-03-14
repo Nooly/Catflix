@@ -16,8 +16,8 @@ const MyCard = (props) => {
         setIsHovered(false);
     };
 
-    const handleMyListRemoveItem = () =>{
-        if (props.onMyListRemoveItem){
+    const handleMyListRemoveItem = () => {
+        if (props.onMyListRemoveItem) {
             props.onMyListRemoveItem();
         }
     }
@@ -27,7 +27,9 @@ const MyCard = (props) => {
             onMouseLeave={handleMouseLeave}
         >
             {!isHovered ?
-                <img className='thumb' src={props.data.imgThumb} alt={props.data.title} />
+                <div className='img-thumb-div'>
+                    <img className='thumb' src={props.data.imgThumb} alt={props.data.title} />
+                </div>
                 :
                 <CardPop className='card-pop' data={props.data} onMyListRemoveItem={handleMyListRemoveItem}></CardPop>
             }

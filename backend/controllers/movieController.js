@@ -26,9 +26,9 @@ const getMoviePage = async (req, res) => {
     const movies = await Movie.find();
     const moviesPage = [{ billboard: null }, { movies: [] }];
     moviesPage[0].billboard = getRandomContent(movies)
+    moviesPage[1].movies.push(createCarouselItemAll(movies, "All movies"));
     moviesPage[1].movies.push(createCarouselItemGenre(movies, "Action", "Action Movies"));
     moviesPage[1].movies.push(createCarouselItemGenre(movies, "Comedy", "Best movies to laugh"));
-    moviesPage[1].movies.push(createCarouselItemAll(movies, "All movies"));
     res.send({ moviesPage });
 };
 

@@ -92,15 +92,15 @@ const Navbar = () => {
                             }}
                         />
                         {/* Add your drop-down list component here */}
-                        <ButtonGroup>
-                            <Dropdown>
+                        <ButtonGroup >
+                            <Dropdown >
 
                                 <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                                     {userInfo &&
                                         <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />
                                     }
                                 </Dropdown.Toggle>
-                                <Dropdown.Menu align="right">
+                                <Dropdown.Menu className='bg-gray' align="right">
                                     {userInfo &&
                                         <Nav.Link href="#action">
                                             <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />

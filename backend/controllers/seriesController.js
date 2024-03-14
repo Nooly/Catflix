@@ -26,9 +26,9 @@ const getSeriesPage = async (req, res) => {
     const serieses = await Series.find();
     const seriesesPage = [{ billboard: null }, { serieses: [] }];
     seriesesPage[0].billboard = getRandomContent(serieses)
+    seriesesPage[1].serieses.push(createCarouselItemAll(serieses, "All Serieses"));
     seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Animation", "Cartoons & Anime"));
     seriesesPage[1].serieses.push(createCarouselItemGenre(serieses, "Comedy", "Peak Comedy"));
-    seriesesPage[1].serieses.push(createCarouselItemAll(serieses, "All Serieses"));
     res.send({ seriesesPage });
 };
 
