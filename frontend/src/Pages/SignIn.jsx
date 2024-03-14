@@ -76,7 +76,7 @@ const SignIn = () => {
   return (
     <div className='sign-overlay'>
       <div className='sign-bg'>
-        <img className='sign-logo' src='public\netflix_official_logo_icon_168085.png'></img>
+        <img className='sign-logo' src='netflix_official_logo_icon_168085.png'></img>
         <div className='sign-div'>
           <h3 className='text-white'>Sign In</h3>
           <form onSubmit={submitHandler} className='form-container'>
