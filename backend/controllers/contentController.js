@@ -17,10 +17,11 @@ const getHomePage = async (req, res) => {
 
 const getContentByQuery = async (req, res) => {
     const { query } = req;
-    const page = query.page || 1;
+    // const page = query.page || 1;
+    const page = 1; // replace with infinite scrolling later
     const searchQuery = query.q || "";
-    // const pageSize = query.pageSize || 6;
-    const pageSize = 2; // remove this later just for testing
+    const pageSize = query.pageSize || 6;
+    // const pageSize = 2; // remove this later just for testing
     const queryFilter = searchQuery && searchQuery !== "all" ? {
         title: {
             $regex: searchQuery,

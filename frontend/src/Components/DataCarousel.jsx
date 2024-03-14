@@ -21,7 +21,7 @@ const DataCarousel = (props) => {
     <div>      
       {props && props.data && props.data.length > 0 &&
         <div>
-          <h1>{props.data[0]}</h1>
+          <h1 className='text-white'>{props.data[0]}</h1>
           <Carousel className="carousel-container"
             autoPlay={false}
             animation="slide"

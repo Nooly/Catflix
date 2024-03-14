@@ -50,12 +50,13 @@ export const Search = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div>
+            <h1 className='title'>Results: </h1>
+            <div className='flex-container'>
                 {contents &&
                     contents.map((c, i) => (<MyCard data={c} key={i}></MyCard>))
                 }
             </div>
-            <div>
+            {/* <div>
                 {[...Array(pages).keys()].map((x) => (
                     <LinkContainer key={x + 1} className="mx-1" to={{
                         pathname: "/search", search: getFilterURI(search, { pageCount: x + 1 }, true),
@@ -64,7 +65,7 @@ export const Search = () => {
                             variant="light">{x + 1}</Button>
                     </LinkContainer>
                 ))}
-            </div>
+            </div> */}
 
         </div>
     )

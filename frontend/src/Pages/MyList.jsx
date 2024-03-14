@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar.jsx';
 import { User } from '../User.jsx';
 import { React, axios, useContext, useEffect, useNavigate, useState } from '../imports.js'
 import { checkAuthentication } from '../utils.js';
+import '../Styles/MyList.css';
 
 export const MyList = () => {
 
@@ -47,14 +48,18 @@ export const MyList = () => {
     console.log("need to remove here")
   };
 
-  return (
+  return (  
     <div>
       <Navbar></Navbar>
-      {userInfo && userInfo.myList.length > 0 &&
-        userInfo.myList.map((data, index) => (
-          <MyCard key={index} data={data} onMyListRemoveItem={handleMyListRemoveItem}></MyCard>
-        ))
-      }
+      <h1 className='title'>My List: </h1>
+      <div className='flex-container'>
+        {userInfo && userInfo.myList.length > 0 &&
+          userInfo.myList.map((data, index) => (
+            <MyCard className='item' key={index} data={data} onMyListRemoveItem={handleMyListRemoveItem}></MyCard>
+          ))
+        }
+      </div>
+
     </div>
   )
 }

@@ -17,7 +17,7 @@ const Navbar = () => {
 
 
     // State for storing scroll opacity
-    const [scrollOpacity, setScrollOpacity] = useState(0.5);
+    const [scrollOpacity, setScrollOpacity] = useState(0);
 
     // Function to handle scroll events
     const handleScroll = () => {
@@ -32,6 +32,9 @@ const Navbar = () => {
 
         // Update the scrollOpacity state with the calculated opacity
         setScrollOpacity(opacity);
+        if (scrollPosition == 0) {
+            setScrollOpacity(0)
+        }
     };
 
     // Effect hook to add and remove scroll event listener
@@ -93,9 +96,9 @@ const Navbar = () => {
                             <Dropdown>
 
                                 <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                                {userInfo &&
-                                    <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />
-                                }
+                                    {userInfo &&
+                                        <Image className='profile-pic' src={userInfo.profilePicture} alt="Profile" />
+                                    }
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu align="right">
                                     {userInfo &&

@@ -1,10 +1,10 @@
-        // YoutubePlayer.js
-        import React from 'react';
-        import ReactPlayer from 'react-player';
+// YoutubePlayer.js
+import React from 'react';
+import ReactPlayer from 'react-player';
 
-        const YoutubePlayer = ({ videoUrl }) => {
-        return (
-            <ReactPlayer
+const YoutubePlayer = ({ videoUrl }) => {
+    return (
+        <ReactPlayer
             url={videoUrl}
             width="640px"
             height="390px"
@@ -13,11 +13,12 @@
             muted={true}
             config={{
                 youtube: {
-                playerVars: { autoplay: 1, modestbranding: 1, controls: 0 }
+                    playerVars: { autoplay: 1, modestbranding: 1, controls: 0 }
                 }
             }}
-            />
-        );
-        };
+        />
+    );
+};
 
-        export default YoutubePlayer;
+export default YoutubePlayer;
+// not using this i think

@@ -156,25 +156,25 @@ const CardPop = (props) => {
                 <div className='video-container'>
                     <YouTube videoId={vidID} opts={opts} onReady={_onReady} />
                     {isMute ?
-                        <button className='custom-mute-button bi-volume-mute-fill' onClick={toggleMute}></button>
+                        <button className='custom-mute-button bi-volume-mute-fill button-all' onClick={toggleMute}></button>
                         :
-                        <button className='custom-mute-button bi-volume-up-fill' onClick={toggleMute}></button>
+                        <button className='custom-mute-button bi-volume-up-fill button-all' onClick={toggleMute}></button>
                     }
                 </div>
-                <button className='custom-play-button bi-play-fill' onClick={playContent}></button>
+                <button className='custom-play-button bi-play-fill button-all' onClick={playContent}></button>
                 {isInMyList ?
-                    <button className='custom-remove-button bi-dash-lg' onClick={removeMyList}></button>
+                    <button className='custom-remove-button bi-dash-lg button-all' onClick={removeMyList}></button>
                     :
-                    <button className='custom-add-button bi-plus-lg' onClick={addMyList}></button>
+                    <button className='custom-add-button bi-plus-lg button-all' onClick={addMyList}></button>
 
                 }
                 <div className='information-div'>
                     {isMovie ?
-                        <span>This is a movie </span>
+                        <div>{props.data.duration} </div>
                         :
-                        <span>This is a series (not a movie) </span>
+                        <div>{props.data.duration}</div>
                     }
-                    <span>{props.data.genre} </span>
+                    <div>{props.data.genre} </div>
                 </div>
             </div>
         </div>

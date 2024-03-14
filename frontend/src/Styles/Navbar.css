@@ -13,6 +13,7 @@
     /* Ensure it appears above other elements */
     color: white;
     height: 10%;
+    background:linear-gradient(to bottom, black, transparent)
 }
 
 .background-layer {

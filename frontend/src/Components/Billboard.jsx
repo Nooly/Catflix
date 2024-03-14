@@ -4,13 +4,13 @@ import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../Styles/Billboard.css';
 
-let videoElement = null;
-
 const Billboard = (props) => {
 
   const vidID = useRef(null);
 
   const [item, setItem] = useState();
+
+  const [videoElement, setVideoElement] = useState(null);
 
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const Billboard = (props) => {
   };
 
   const _onReady = (event) => {
-    videoElement = event;
+    setVideoElement(event);
   };
 
   const playContent = () => {

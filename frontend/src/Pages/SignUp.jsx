@@ -132,6 +132,7 @@ const SignUp = () => {
           }
 
           {/* <button onClick={autoFill} className=''>Auto Fill</button> */}
+            <a href='/signin' className='text-white'>Already signed in?</a>
         </div>
       </div>
     </div>
