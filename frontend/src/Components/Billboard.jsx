@@ -1,4 +1,4 @@
-import { React, useEffect, useRef, useState } from '../imports.js'
+import { React, useEffect, useNavigate, useRef, useState } from '../imports.js'
 import { extractYouTubeVideoId } from '../utils.js';
 import YouTube from 'react-youtube';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -11,6 +11,8 @@ const Billboard = (props) => {
   const vidID = useRef(null);
 
   const [item, setItem] = useState();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // console.log(item)
@@ -44,20 +46,29 @@ const Billboard = (props) => {
     videoElement = event;
   };
 
+  const playContent = () => {
+    localStorage.setItem('lastContent', JSON.stringify(item));
+    navigate("/watch");
+}
+
+  const moreInfo = () => {
+
+  };
+
   return (
     <div className='billboard-container'>
       <div className='billboard-video-container'>
         <YouTube videoId={vidID.current} opts={opts} onReady={_onReady} className='billboard-video' />
       </div>
-      <div className='billboard-information'>
+      <div className='billboard-information text-white'>
         {item &&
           <img className='billboard-image' src={item.imgTitle} alt='image suppose to go here'></img>
         }
         {item &&
           <div className='billboard-description'>{item.description}</div>
         }
-        <button className='billboard-play-button bi-play-fill'> Play</button>
-        <button className='billboard-info-button bi-exclamation-circle'> More Info</button>
+        <button className='billboard-play-button bi-play-fill' onClick={playContent}> Play</button>
+        <button className='billboard-info-button bi-exclamation-circle' onClick={moreInfo}> More Info</button>
       </div>
 
     </div>
