@@ -1,6 +1,6 @@
 import express from 'express';
 import expressAsyncHandler from "express-async-handler";
-import { signup, signin, checkAuth, getMyList, addToMyList, removeFromMyList } from '../controllers/userController.js';
+import { signup, signin, checkAuth, getMyList, addToMyList, removeFromMyList, checkUserExist } from '../controllers/userController.js';
 import { isAuth } from '../utils.js';
 
 const usersRouter = express.Router();
@@ -8,6 +8,8 @@ const usersRouter = express.Router();
 usersRouter.get('/check-auth', expressAsyncHandler(checkAuth));
 usersRouter.post('/signup', expressAsyncHandler(signup));
 usersRouter.post('/signin', expressAsyncHandler(signin));
+usersRouter.post('/check-user-exist', expressAsyncHandler(checkUserExist));
+
 
 usersRouter.use(isAuth);
 

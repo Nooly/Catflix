@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <ToastContainer position='bottom-center' limit={1} />
 
-      <Container>
+      {/* <Container> */}
         <Routes>
           <Route>
             <Route path="/" element={<HomePage />} />
@@ -31,7 +31,7 @@ function App() {
 
           </Route>
         </Routes>
-      </Container>
+      {/* </Container> */}
 
     </BrowserRouter>
   )

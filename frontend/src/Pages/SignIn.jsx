@@ -2,6 +2,7 @@ import { User } from '../User.jsx';
 import { USER_SIGNIN } from '../actions.jsx';
 import { React, axios, toast, useContext, useEffect, useNavigate, useState } from '../imports.js';
 import { checkAuthentication } from '../utils.js';
+import '../Styles/Sign.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -73,28 +74,37 @@ const SignIn = () => {
 
 
   return (
-    <div className='sign-div'>
-      <h3 className='sign-label'>Sign In</h3>
-      <form onSubmit={submitHandler} className='form-container'>
-        {/* <label htmlFor="email" className='test'>Email</label> */}
-        <input className='test'
-          type="email"
-          id="email"
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        {/* <label htmlFor="password" className='test'>Password</label> */}
-        <input className='test'
-          type="password"
-          id="password"
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-        <button type="submit" className='sign-button test'>Sign In</button>
-      </form>
-      <button onClick={autoFill} className='test'>Auto Fill</button>
+    <div className='sign-overlay'>
+      <div className='sign-bg'>
+        <img className='sign-logo' src='public\netflix_official_logo_icon_168085.png'></img>
+        <div className='sign-div'>
+          <h3 className='text-white'>Sign In</h3>
+          <form onSubmit={submitHandler} className='form-container'>
+            {/* <label htmlFor="email" className='test'>Email</label> */}
+            <input className='margin5 border-round'
+              type="email"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+            />
+            {/* <label htmlFor="password" className='test'>Password</label> */}
+            <input className='margin5 border-round'
+              type="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+            <button type="submit" className='sign-button text-white margin5 border-round'>Sign In</button>
+          </form>
+          <button onClick={autoFill} className='margin5 border-round'>Auto Fill</button>
+          <a href='/signup' className='forgot-password'> Forgot password?</a>
+          <div className='new-div'>New to Catflix?
+            <a href='/signup' className='text-white'> Sign up now.</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

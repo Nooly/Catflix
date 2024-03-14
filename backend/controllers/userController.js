@@ -69,6 +69,15 @@ const signin = async (req, res) => {
     res.status(401).send({ message: "Invalid User/Password" });
 }
 
+const checkUserExist = async (req,res) =>{
+    const {  email } = req.body;
+
+    const user = await User.findOne({ email: email });
+
+    if (user) res.send(true)
+    else res.send(false);
+};
+
 const addToMyList = async (req, res) => {
     try {
         const { email } = req.body;
@@ -139,4 +148,4 @@ const getMyList = async (req, res) => {
     else res.status(404).send({ message: "User not found" });
 };
 
-export { checkAuth, signup, signin, addToMyList, removeFromMyList, getMyList };
+export { checkAuth, signup, signin,checkUserExist, addToMyList, removeFromMyList, getMyList };
