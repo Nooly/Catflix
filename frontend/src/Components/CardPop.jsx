@@ -6,11 +6,12 @@ import { extractYouTubeVideoId } from '../utils.js';
 import { User } from '../User.jsx';
 import { USER_ADD_MY_LIST, USER_REMOVE_MY_LIST } from '../actions.jsx';
 
-let videoElement = null;
 
 const CardPop = (props) => {
     const [isMute, setIsMute] = useState(true);
     const vidID = extractYouTubeVideoId(props.data.trailer);
+
+    const [videoElement, setVideoElement] = useState(null);
 
     const { state, dispatch: ctxDispatch } = useContext(User);
     const { userInfo } = state;
@@ -26,8 +27,8 @@ const CardPop = (props) => {
         props.data.movie ? setIsMovie(true) : setIsMovie(false);
     }, [userInfo, isInMyList, isMovie])
 
-    useEffect(()=>{
-    },[isMovie])
+    useEffect(() => {
+    }, [isMovie])
 
     const checkInMyList = (content) => { return userInfo.myList.some((c) => c._id === content._id); };
 
@@ -122,20 +123,30 @@ const CardPop = (props) => {
 
     useEffect(() => {
         if (videoElement) {
-            
-            if (isMute) {
-console.log("THER EEROROROR IS HERE?? ISMUTE")
 
-                videoElement.target.mute();
+            if (isMute) {
+                if (videoElement.target) {
+                    if (videoElement.target.h) {
+                        videoElement.target.mute();
+
+                    }
+                }
+
             }
             else {
-                videoElement.target.unMute();
+                if (videoElement.target) {
+                    if (videoElement.target.h) {
+                        videoElement.target.unMute();
+
+                    }
+
+                }
             }
         }
     }, [videoElement, isMute]);
 
     const _onReady = (event) => {
-        videoElement = event;
+        setVideoElement(event);
     };
 
     return (

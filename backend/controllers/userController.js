@@ -53,7 +53,7 @@ const signin = async (req, res) => {
 
     const user = await User.findOne({ email: email });
     if (user) {
-        console.log(user)
+        // console.log(user)
         if (bcrypt.compareSync(passwordFromWebsite, user.password)) {
             res.send({
                 _id: user._id,
