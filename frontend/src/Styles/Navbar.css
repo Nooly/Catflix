@@ -12,6 +12,7 @@
     z-index: 1000;
     /* Ensure it appears above other elements */
     color: white;
+    height: 10%;
 }
 
 .background-layer {
@@ -23,6 +24,7 @@
     background-color: #333;
     /* Set your background color here */
     z-index: -1;
+
 }
 
 .left-section,
@@ -99,6 +101,6 @@
 }
 
 .profile-pic{
-    width: 50px;
-    height: 50px;
+    width: 1em;
+    height: 1em;
 }

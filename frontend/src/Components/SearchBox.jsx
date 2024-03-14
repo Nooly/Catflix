@@ -1,6 +1,7 @@
 import { Form, InputGroup, FormControl, Button, useState, useNavigate, useEffect, useLocation } from '../imports.js';
 import { getFilterURI } from '../utils.js';
 import { useDebounce } from 'use-debounce';
+import '../Styles/SearchBox.css';
 
 const SearchBox = () => {
 
@@ -15,7 +16,7 @@ const SearchBox = () => {
 
     useEffect(() => {
 
-        if (!query) return;
+        if (!query ) return ;
         const filterURI = getFilterURI(search, { query: query });
         navigate(filterURI);
         document.getElementById('q').focus();
@@ -33,7 +34,7 @@ const SearchBox = () => {
     return (
         <Form onSubmit={submitHandler}>
             <InputGroup>
-                <FormControl type="text" name="q" id="q" placeholder="Search for..." aria-describedby="button-search"
+                <FormControl type="text" name="q" id="q" placeholder="Search Titles..." aria-describedby="button-search" className='search-area'
                     value={text} onChange={(e) => setText(e.target.value)}></FormControl>
                 <Button variant="outline-primary" id="button-search" type='submit'>
                     <i className="fa fa-search"></i>
