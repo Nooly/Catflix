@@ -7,7 +7,14 @@
     /* height: fit-content; */
     /* overflow: visible; */
     overflow: visible !important;
+    /* position: relative; */
+    /* z-index: 0; */
 
+
+}
+
+.carousel-container:hover {
+    z-index: 20;
 }
 
 
@@ -16,7 +23,7 @@
 } */
 
 .flex-container-caro {
-    position: relative;
+    /* position: relative; */
     margin-top: 5px;
     margin-left: 50px;
     margin-right: 50px;
@@ -31,3 +38,22 @@
 .relative{
     position: relative;
 } */
+
+.carosel-card{
+    position: absolute;
+}
+
+/* .relative{
+    position: relative;
+} */
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-pink{
+    background-color: pink;
+}
+.static{
+    position: static;
+}

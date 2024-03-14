@@ -150,7 +150,7 @@ const CardPop = (props) => {
     };
 
     return (
-        <div className='pop-container popout'>
+        <div className='pop-container popout z-index-999'>
 
             <div className='pop-content'>
                 <div className='video-container'>

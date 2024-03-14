@@ -22,7 +22,7 @@ const MyCard = (props) => {
         }
     }
     return (
-        <div className='card-pop-something'
+        <div className='card-pop-something '
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -31,7 +31,7 @@ const MyCard = (props) => {
                     <img className='thumb' src={props.data.imgThumb} alt={props.data.title} />
                 </div>
                 :
-                <CardPop className='card-pop' data={props.data} onMyListRemoveItem={handleMyListRemoveItem}></CardPop>
+                <CardPop data={props.data} onMyListRemoveItem={handleMyListRemoveItem} ></CardPop>
             }
 
         </div>

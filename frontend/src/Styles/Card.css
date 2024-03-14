@@ -1,22 +1,18 @@
 /* Card.css */
 
-.card-container {
+/* .card-container {
 
   position: relative;
   width: 300px;
-  /* Adjust the width as needed */
   height: 400px;
-  /* Adjust the height as needed */
   overflow: hidden;
   border: 1px solid #ccc;
-  /* Add border or customize as needed */
   transition: transform 0.3s ease-in-out;
-}
-
+} */
+/* 
 .card-container:hover {
   transform: scale(1.1);
-  /* Adjust the scaling effect on hover */
-}
+} */
 
 img {
   width: 100%;
@@ -44,9 +40,9 @@ img {
   transition: transform 0.3s ease-in-out;
 }
 
-.card-container:hover .hover-content {
+/* .card-container:hover .hover-content {
   transform: translateY(0);
-}
+} */
 
 .icon1 {
   width: 50px;
@@ -106,3 +102,16 @@ img {
   position: relative;
   z-index: 200;
 } */
+
+.card-pop-something {
+  /* position: relative; */
+  /* position: relative; */
+}
+
+.img-thumb-div {
+  /* position: relative; */
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* Your other styling */
+}
+

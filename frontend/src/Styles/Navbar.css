@@ -24,7 +24,7 @@
     bottom: 0;
     background-color: #333;
     /* Set your background color here */
-    z-index: -1;
+    z-index: -5;
 
 }
 

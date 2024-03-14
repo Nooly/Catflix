@@ -20,9 +20,9 @@ const DataCarousel = (props) => {
   return (
     <div >
       {props && props.data && props.data.length > 0 &&
-        <div>
+        <div >
           <h1 className='text-white'>{props.data[0]}</h1>
-          <Carousel className="carousel-container"
+          <Carousel className="carousel-container "
             autoPlay={false}
             animation="slide"
             duration={700}
@@ -31,18 +31,17 @@ const DataCarousel = (props) => {
             cycleNavigation={true}
             fullHeightHover={true}
             indicators={false}
-
           >
             {groupItems(props.data[1], 6).map((groupedItems, groupId) => (
               // <Grid container spacing={2} key={groupId}>
-              <Grid container key={groupId}>
-                <div className='flex-container-caro '>
+              <Grid container key={groupId} className=' z-index-2 '>
+                <div className='flex-container-caro  '>
 
                   {groupedItems.map((content, index) => (
                     // <Grid item xs={4} key={itemIndex}>
                     // <div className='flex-container-caro'>
                     // <Item key={itemIndex} item={item} />
-                    <MyCard className='carosel-card' data={content} key={index} ></MyCard>
+                    <MyCard data={content} key={index} ></MyCard>
                     // </div>
                     // </Grid>
                   ))}
